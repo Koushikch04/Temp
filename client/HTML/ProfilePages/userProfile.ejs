@@ -65,9 +65,22 @@
                     <div class="card mb-3 content">
                         <h1 class="m-3">History</h1>
                         <div class="card-body app">
-                            <div class="row">
+                            
+
                                 <div class="col">
-                                    <h5>Recent Appointment </h5>
+                                    <h2>Announcements </h2>
+                                    <% if(announcements.length > 0) { %>
+                                        <% for(let i = 0; i < announcements.length; i++) { %>
+                                            <div class="announcementBox">
+                                                <h3>ADMIN</h3>
+                                                <h5>Message : <%= announcements[i].message %></h5>
+                                            </div>
+                                        <% } %>
+                                    <% } %>
+                                </div>
+                                <div class="row">
+                                <div class="col">
+                                    <h2>Appointments </h2>
                                     <% if(app.appointment.length > 0) { %>
                                         <% for(let i = 0; i < app.appointment.length; i++) { %>
                                             <div class="appointmentbox">
@@ -92,6 +105,9 @@
                                         <% } %>
                                     <% } %>
                                 </div>
+
+                                
+                                
                             </div>
                         </div>
                     </div>

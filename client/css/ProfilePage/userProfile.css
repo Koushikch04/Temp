@@ -108,3 +108,12 @@ body {
 .appointmentbox.inactive{
     display: none;
 }
+
+.announcementBox{
+    background-color: rgb(125, 170, 169); 
+    border: 2px solid black;
+    border-radius: 30px;
+    padding: 10px;
+    width: 350px;
+    margin-bottom: 10px;
+}
