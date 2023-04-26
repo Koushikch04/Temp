@@ -1,6 +1,6 @@
 let icon = document.querySelector('.iclose');
 let box = document.querySelector('.updatebox');
-console.log(box);
+
 icon.addEventListener('click',()=>{
     box.classList.add('inactive');
 })
@@ -28,6 +28,23 @@ submit.addEventListener('click',(event)=>{
 
         if(!conf) {
             event.preventDefault();
+
         }
     }
 })
+
+// let cancel = document.querySelectorAll("#cancel");
+// let app = document.querySelectorAll(".appointmentbox");
+// console.log(app);
+// for(let i=0; i < cancel.length; i++) {
+//     cancel[i].addEventListener(('click'),(event) =>{
+//            let c = window.confirm("Confirm appointment cancellation");
+//            if(!c){
+//             event.preventDefault();
+//            }else{
+//             app[i].classList.add('inactive');
+//            }
+//         })
+        
+        
+// }

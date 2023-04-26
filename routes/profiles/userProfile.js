@@ -7,8 +7,6 @@ router.get("/", async (req, res) => {
     let userMail = req.session.userMail
     console.log(userMail);
     let app = await userSchema.findOne({ mailId : userMail })
-    // app = JSON.stringify(app)
-    console.log(app);
     res.render("./HTML/ProfilePages/userProfile.ejs", { userName, userMail, app})
 })
 
@@ -52,6 +50,7 @@ router.post("/updateProfile",async (req,res)=>{
 
 
     res.render("./HTML/ProfilePages/userProfile.ejs",{userName: req.session.userName,userMail: mail})
+    res.redirect("/user/profile")
 })
 
 module.exports = router;
