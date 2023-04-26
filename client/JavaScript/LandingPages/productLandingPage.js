@@ -53,75 +53,7 @@ function updateCartTotal() {
     let z = y[0].innerText = 'Total :' + total
 }
 
-
-// function addToCartFromDb() {
-//     console.log("Adding data from db");
-//     let i = 0;
-//     Names.forEach(element => {
-//         if (element !== " ") {
-//             addToCartItems(element, prices[i], src[i])
-//             i++
-//         }
-//     });
-// }
-
-// function addToCartItems(title, price, imagSource) {
-//     let cartRow = document.createElement('div')
-//     cartRow.classList.add('box')
-//     let cartItems = document.getElementsByClassName('shopping-cart')[0]
-//     let cartItemNames = document.getElementsByClassName('name')
-//     let cartRowContents = `
-//       <img src="${imagSource}" style="width: 200px;">
-//         <div class="content">
-//             <h3 class="name">${title}</h3>
-//             <span class="price">Rs.${price}</span>
-//             <span class="quantity">qty : <input type="number" min="1" class="qty" name="qty" value="1"></span>
-//             <input type="hidden" id="custId" name="custId" value="${price} ${title} ${imagSource}">
-//             <span class="remove" price="${price}" title="${title}" imagSource = "${imagSource}"><i class="fa-solid fa-xmark"></i></span>
-//         </div>
-// `
-//     cartRow.innerHTML = cartRowContents
-//     cartItems.append(cartRow)
-//     let x = cartRow.getElementsByClassName('remove')
-//     for (let i = 0; i < x.length; i++) {
-//         let y = x[i]
-//         y.addEventListener('click', function (event) {
-//             let buttonClicked = event.target
-//             console.log("button clicked");
-//             console.log(y);
-//             let productDetails = {
-//                 type: "remove",
-//                 title: y.getAttribute('title').trim(),
-//                 price: parseFloat(y.getAttribute('price')),
-//                 imagSource: y.getAttribute('imagSource')
-//             }
-//             buttonClicked.parentElement.parentElement.parentElement.remove()
-//             console.log("price is:" + productDetails.price);
-//             xhr.onreadystatechange = () => {
-//                 if (xhr.readyState === 4) {
-//                     alert(xhr.response);
-//                 }
-//             }
-
-//             xhr.open("POST", '/products/product', true)
-//             xhr.setRequestHeader('Content-type', 'application/json')
-//             xhr.send(JSON.stringify(productDetails))
-//             updateCartTotal()
-//         })
-//     }
-//     let y = cartItems.getElementsByClassName('qty')
-//     for (let i = 0; i < y.length; i++) {
-//         let input = y[i]
-//         input.addEventListener('change', function (event) {
-//             updateCartTotal()
-//         })
-//     }
-//     updateCartTotal()
-// }
-
 let acc = document.querySelector('.data')
-// console.log(acc)
-
 let data = {
     products: [
         JSON.parse(document.querySelector('.data').innerHTML)
@@ -130,11 +62,7 @@ let data = {
 
 let card = document.getElementsByClassName('pro-container');
 let xyz = card[0];
-
-console.log(xyz)
-// console.log(data.products[0][2].petType);
-
-for (let i = 0; i < 20; i++) {
+for (let i = 0; i<20; i++) {
     xyz.innerHTML += `<div class="pro ${data.products[0][i].petType}">
                 <img class="imgsrc" src="${data.products[0][i].productDetails.src}" alt="">
                 <div class="des">
@@ -161,19 +89,11 @@ let dog = document.getElementsByClassName('dogs');
 let cat = document.getElementsByClassName('cats');
 let bird = document.getElementsByClassName('birds');
 let fish = document.getElementsByClassName('fishes');
-// console.log(cat[0].);
 function refresh() {
-
-    // filterProduct('all');
-
     let elements = document.querySelectorAll(".pro");
     elements.forEach((ele) => {
         ele.classList.remove('inactive');
     })
-
-
-
-
     const ex = document.getElementsByClassName('button-value');
 
 
