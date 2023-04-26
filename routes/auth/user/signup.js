@@ -4,6 +4,7 @@ const sqlite = require('sqlite3')
 const bcrypt = require('bcryptjs')
 const Users = require("../../../models/userSchema");
 const router = express.Router();
+const count = require("../../../models/counts")
 
 router.get("/", (req, res) => {
     res.render("./HTML/Authentication/signup.ejs", { error: false })
@@ -18,6 +19,7 @@ router.post("/", async function (req, res) {
         const user = await Users.create({ name: { firstName: req.body.FirstName, lastName: req.body.LastName }, mailId: req.body.Email, password: hash, userCart: [] })
         await user.save()
         res.render("./HTML/Authentication/login", { error: true, message: "Congratulations, Your account has been successfully created! Please login to continue." });
+        await count.findOneAndUpdate({}, { $inc: { 'countCustomers': 1 } })
     }
     else {
         res.render("./HTML/Authentication/signup");

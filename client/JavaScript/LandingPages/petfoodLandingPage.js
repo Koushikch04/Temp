@@ -17,15 +17,8 @@ for (let i = 0; i < data.products[0].length; i++) {
     xyz.innerHTML += `<div class="${data.products[0][i].petType} items">
    <img class="imgsrc " src="${data.products[0][i].productDetails.src}" style="width: 200px;">
        <div class="des"> <h3 class="title" >${data.products[0][i].productDetails.Name}</h3>
-       <div class="prices"><i class="fa-solid fa-indian-rupee-sign"></i>${data.products[0][i].productDetails.price}</div>
-       <div class="stars">
-           <i class="fas fa-star"></i>
-           <i class="fas fa-star"></i>
-           <i class="fas fa-star"></i>
-           <i class="fas fa-star"></i>
-           <i class="fas fa-star-half-alt"></i>
-
-       </div></div>
+       <div class="prices" style="font-size:1.5rem;"><i class="fa-solid fa-indian-rupee-sign"></i>${data.products[0][i].productDetails.price}</div>
+       </div>
        <p class="name" style="display: none;">${data.products[0][i].productDetails.Name}</p>
        <p class="price" style="display: none;">${data.products[0][i].productDetails.price}</p>
        <p class="src" style="display: none;">${data.products[0][i].productDetails.src}</p>
