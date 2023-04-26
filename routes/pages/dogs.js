@@ -21,7 +21,7 @@ const petDetails = [
     { productType: "pet", petType: "dogs", productDetails: { Name: "German shepherd 10", price: "30000", src: "../../img/dogLandingPage/Dog_Breeds/german_shepard.png" } },
 ]
 
-// petSchema.insertMany(petDetails)
+
 router.get("/", async (req, res) => {
     let notlogin = true;
     if (req.session.userName) {
