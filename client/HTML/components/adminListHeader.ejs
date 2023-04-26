@@ -1,0 +1,118 @@
+<div class="message__records">
+  <h2><%= records %></h2>
+  <% if(path=='/profile/admin/products') { %>
+    <div id="product__button" onclick="addProductModalOpenOrClose()">
+      + Add Product
+    </div>
+    <% } %>
+  <form action="<%= path %>" method="GET" class="records__container">
+    <div class="records__header">
+      <div class="sort__section">
+        <h3>Sort By:</h3>
+
+        <div id="modeForm">
+            <% for(let i = 0; i < sortList.length; i++) { %> 
+            <button>
+              <input type="radio" name="sortSelector" value="<%= sortList[i].value %>" id="<%= i %>" <%= select == i ? "checked" : null   %> />
+              <label for="<%= i %>"><%= sortList[i].name %></label>
+            </button>
+            <% } %>
+        </div>
+      </div>
+
+      
+      <div class="search__section">
+          <div
+          id="searchForm"
+          >
+          <input type="text" class="search" name="search" value="<%= searchText %>" placeholder="<%= path == '/profile/admin/messages'
+           ? 'Search by name or email' : path == '/profile/admin/products'  ? 'Search by Product name' : 
+            path == '/profile/admin/orders' ? 'Search by username or productName' : ''%>" />
+          <button type="submit" class="search__button" >search</button>
+          </div>
+      </div>
+    </div>
+
+    <div class="records__header-2">
+        <div class="filters__applied">
+            <h3>Filters appllied: </h3>
+            <div class="filters__applied-container">
+              <% for(let i = 0; i < filtersApplied.length; i++) { %>
+                <% if(filtersApplied[i] != 'All') { %>
+                <p class="filters__applied-card"><%= filtersApplied[i] %></p>
+                <% } %>
+              <% } %>
+            </div>
+        </div>
+
+        <% if (filters.length > 0) { %>
+        <div class="filters__modal" onclick="modalOpenOrClose()">
+          <span class="material-icons-sharp"> tune </span>
+          <div href="" id="filterButton"> filters</div>
+        </div>
+        <% } else { %>
+          <div class="filters__modal-disable">
+            <span class="material-icons-sharp"> tune </span>
+            <div href="" id="filterButton"> filters</div>
+          </div>
+        <% } %>
+    </div>
+    
+    <% if (filters.length > 0) { %>
+      <%- include('../Modals/filterModal.ejs', { filters: filters }); %>
+    <% } %>
+  </form>
+  <% if(path=='/profile/admin/products') { %>
+    <%- include('../Modals/productModal.ejs', { petType: "", prodctType: "", productName: "",prodctPrice: "",
+    productImage: "" }); %>
+  
+    <% } %>
+  
+  <form action="<%= path %>/delete" method="get" class="message__records-container">
+    <div class="message__records-header">
+      <div class="select-all">
+        <input type="checkbox" name="selectAll" value="selectAll" id="selectAll">
+        <label for="selectAll">Select All</label>
+      </div>
+      
+      <div class="delete-selected">
+        <button type="submit">Delete Selected Items</button>
+      </div>
+    </div>
+    
+    <% if(path === "/profile/admin/messages") { %>
+    <%- include("../components/adminMessagesRecords", { messages: messages}) %>
+    <% } else if(path === "/profile/admin/products") { %> 
+    <%- include("../components/adminProductsRecords", { messages: messages}) %>
+    <% } else if(path === "/profile/admin/orders") { %> 
+    <%- include("../components/adminOrdersRecords", { messages: messages}) %>
+    <% } %>
+    
+  </form>
+
+  <form action="<%= path == '/profile/admin/messages' ? path + '/pagination' : path %>" method="get" class="pagination-container">
+    <button class="previous<%= currentPage != 1 ? '-active' : '';%>">
+      <input type="radio" name="pagination" value="<%= Number(currentPage) - 1 %>" id="<%= Number(currentPage) * 1000 %>" />
+      <label for="<%= Number(currentPage) * 1000 %>">Previous Page</label>
+    </button>
+
+    <button>
+      <input type="radio" name="pagination" value="<%= currentPage %>" id="<%= currentPage %>" checked />
+      <label for="<%= currentPage %>"><%= currentPage %></label>
+    </button>
+
+    <button class="next<%= currentPage != endingPage ? '-active' : '';%>">
+      <input type="radio" name="pagination" value="<%= Number(currentPage) + 1 %>" id="<%= Number(currentPage) * 10010 %>" />
+      <label for="<%= Number(currentPage) * 10010 %>">Next Page</label>
+    </button>
+
+    <input type="hidden" name="select" value="<%= select %>">
+    <input type="hidden" name="sortSelector" value="<%= select %>">
+
+    <input type="hidden" name="searchText" value="<%= searchText %>">
+    
+
+  </form>
+
+</div>
+

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../../css/LandingPages/productLandingPage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" />  
+    <script src="../../JavaScript/LandingPages/productLandingPage.js" defer></script>
+</head>
+
+<body>
+    <%- include("../components/navbar", {notlogin,admin}); %>
+        <p class="Names-data" style="display: none;"> <%= cartNames.join(","); %></p>
+        <p class="prices-data" style="display: none;"> <%= cartPrices.join(","); %></p>
+        <p class="src-data" style="display: none;"> <%= cartSrc.join(","); %></p>
+        <p class="data" style="display: none;"><%= accessories %></p>
+    <section id="hero">
+        <h4>Trade-in-offer</h4>
+        <h2>Super value deals</h2>
+        <h1>ON all products</h1>
+        <p>Save more with coupons & up to 70% off!</p>
+        <button>Shop Now</button>
+    </section>
+
+    <section id="product1" class="section-p1">
+        <div class="headings">
+            <h2>Featured Products</h2>
+            <p>Summer Collection New Mordern Desgins</p>
+        </div>
+        <div class="wrapper">
+            <div id="search-container">
+             <input type="search" id="search-input" placeholder="Search for items">
+             <button id="search">Search</button>
+            </div>
+            <div id="buttons">
+                <a href="#products" class="button-value" onclick="refresh()" value="all">All</a>
+                <a href="#products"  class="button-value" onclick="refresh()" value="dog">Dog</a>
+                <a href="#products"  class="button-value" onclick="refresh()" value="cat">Cat</a>    
+                <a href="#products"  class="button-value" onclick="refresh()" value="bird">Bird</a>
+                <a href="#products"  class="button-value" onclick="refresh()" value="fish">Fish</a>
+                <a href="#products"  class="button-value" onclick="filterProduct('all')" value="price">Price</a>
+            </div>
+            <div id="view-products"></div>
+        </div>
+
+        <div class="pro-container">
+        </div>
+    </section>
+
+    <section id="product1" class="section-p1">
+
+        <div class="pro-container1">
+        </div>
+    </section>
+
+
+    <section id="sm-banner" class="section-p1">
+        <div class="banner-box">
+            <div class="txt">
+                <h4>Crazy deals</h4>
+                <h2>Buy 1 Get 1 FREE</h2>
+                <span>The best classic items arr on sale at Pets Paradise</span>
+                <button>Learn More</button>
+            </div>
+        </div>
+        <div class="banner-box">
+            <div class="txt">
+                <h4>Crazy deals</h4>
+                <h2>Buy 1 Get 1 FREE</h2>
+                <span>The best classic items arr on sale at Pets Paradise</span>
+                <button>Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="banner3">
+        <div class="banner-box">
+            <h2>Seasonal Sale</h2>
+            <h3>Hurry Up Fast !</h3>
+        </div>
+        <div class="banner-box">
+            <h2>Seasonal Sale</h2>
+            <h3>Hurry Up Fast !</h3>
+        </div>
+        <div class="banner-box">
+            <h2>Seasonal Sale</h2>
+            <h3>Hurry Up Fast !</h3>
+        </div>
+    </section>
+    <section id="newsletter">
+        <div class="newstext">
+            <h4>Sign Up for Newsletter</h4>
+            <p>Get E-mail updates about our latest shop and <span> special offers.</span></p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="Your email address">
+            <button>Sign Up</button>
+        </div>
+    </section>
+
+    <%- include("../components/footer"); %>
+
+    <script>
+    </script>
+</body>
+
+</html>

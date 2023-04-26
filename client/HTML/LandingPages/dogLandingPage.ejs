@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dog website</title>
+  
+  <link rel="stylesheet" href="../../css/LandingPages/dogLandingPage.css" />
+  <link rel="stylesheet" href="../../css/LandingPages/productLandingPage.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <script src="../../JavaScript/LandingPages/petsLandingPage.js" defer></script>
+</head>
+
+<body>
+  
+  <%- include("../components/navbar", {notlogin}); %>
+
+
+  <!--Header ends here-->
+  <section class="home" id="home">
+    <div class="content">
+      <h3>Find your <span> Perfect Dog</span> on our website</h3>
+      <a href="#" class="glow-on-hover">Shop Now</a>
+    </div>
+    <img src="../../img/dogLandingPage/bottom_wave.png" alt="" class="wave" />
+  </section>
+
+  <p class="prices-data" style="display: none;"> <%= pricesData.join(","); %></p>
+  <p class="names-data" style="display: none;"><%= productNamesData.join(",") %></p>
+  <p class="src-data" style="display: none;"><%= imgsrcData.join(",") %></p>
+
+  <p class="cart-Names" style="display: none;"> <%= cartNames.join(","); %></p>
+  <p class="cart-Prices" style="display: none;"> <%= cartPrices.join(","); %></p>
+  <p class="cart-src" style="display: none;"> <%= cartSrc.join(","); %></p>
+
+  <section id="Shop-Dog" class="Shop-Dog">
+    <h3 class="detail">
+      <span class="word1">Our</span> <span class="word2"> Popular</span>
+      <span class="word3"> Breeds</span>
+    </h3>
+
+    <div class="search-bar">
+      <div class="search" id="filter-search">
+         <input type="text" class="searchTerm" placeholder="What are you looking for?" ">
+         <button class="searchButton">
+           <i class="fa fa-search search-item" onclick="searchItems()"></i>
+        </button>
+      </div>
+   </div>
+
+    <button class="filter-btn" onclick="expandFilter()">Filter</button> 
+    <div class="filter-options" id="filter-options" style="background-color: white;">
+    <button class="filter-option price" onclick="filter('price')">Price</button>
+    <button class="filter-option name" onclick="filter('name')">Name</button>
+  </div>
+     <div class="products">
+       <!--<div class="product">
+        <h3>Labrador Retriever</h3>
+        <div class="card">
+          <div class="front">
+            <img src="../../img/dogLandingPage/Dog_Breeds/labdrador_retriever.png" alt="" />
+          </div>
+          <div class="back">
+            <p class="info">Male|Female</p>
+            <p class="info">8 Weeks Old</p>
+            <p class="info cost">Rs.15000 <span>Rs. 20000.00</span></p>
+            <a href="" class="pet"><span>Shop Now</span></a>
+          </div>
+        </div>
+      </div> -->
+
+
+      <!-- <div class="product">
+        <h3>Golden Retriever</h3>
+        <div class="card">
+          <div class="front">
+            <img src="../../img/dogLandingPage/Dog_Breeds/Golden_retriever.png" alt="" />
+          </div>
+          <div class="back">
+            <p class="info">Male|Female</p>
+            <p class="info">12 Weeks Old</p>
+            <p class="info cost">Rs.25000 <span>Rs. 40000.00</span></p>
+            <a href="" class="pet"><span>Shop Now</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product">
+        <h3>Beagle</h3>
+        <div class="card">
+          <div class="front">
+            <img src="../../img/dogLandingPage/Dog_Breeds/beagle.png" alt="" />
+          </div>
+          <div class="back">
+            <p class="info">Male|Female</p>
+            <p class="info">10 Weeks Old</p>
+            <p class="info cost">Rs.18000 <span>Rs. 25000.00</span></p>
+            <a href="" class="pet"><span>Shop Now</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product">
+        <h3>German shepherd</h3>
+        <div class="card">
+          <div class="front">
+            <img src="../../img/dogLandingPage/Dog_Breeds/german_shepard.png" alt="" />
+          </div>
+          <div class="back">
+            <p class="info">Male|Female</p>
+            <p class="info">8 Weeks Old</p>
+            <p class="info cost">Rs.20000 <span>Rs. 30000.00</span></p>
+            <a href="" class="pet"><span>Shop Now</span></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="product">
+        <h3>German shepherd 1</h3>
+        <div class="card">
+          <div class="front">
+            <img src="../../img/dogLandingPage/Dog_Breeds/german_shepard.png" alt="" />
+          </div>
+          <div class="back">
+            <p class="info">Male|Female</p>
+            <p class="info">8 Weeks Old</p>
+            <p class="info cost">Rs.20000 <span>Rs. 30000.00</span></p>
+            <a href="" class="pet"><span>Shop Now</span></a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="product">
+        <h3>German shepherd 2</h3>
+        <div class="card">
+          <div class="front">
+            <img src="../../img/dogLandingPage/Dog_Breeds/german_shepard.png" alt="" />
+          </div>
+          <div class="back">
+            <p class="info">Male|Female</p>
+            <p class="info">8 Weeks Old</p>
+            <p class="info cost">Rs.20000 <span>Rs. 30000.00</span></p>
+            <a href="" class="pet"><span>Shop Now</span></a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="product">
+        <h3>German shepherd 3</h3>
+        <div class="card">
+          <div class="front">
+            <img src="../../img/dogLandingPage/Dog_Breeds/german_shepard.png" alt="" />
+          </div>
+          <div class="back">
+            <p class="info">Male|Female</p>
+            <p class="info">8 Weeks Old</p>
+            <p class="info cost">Rs.20000 <span>Rs. 30000.00</span></p>
+            <a href="" class="pet"><span>Shop Now</span></a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="product">
+        <h3>German shepherd 4</h3>
+        <div class="card">
+          <div class="front">
+            <img src="../../img/dogLandingPage/Dog_Breeds/german_shepard.png" alt="" />
+          </div>
+          <div class="back">
+            <p class="info">Male|Female</p>
+            <p class="info">8 Weeks Old</p>
+            <p class="info cost">Rs.20000 <span>Rs. 30000.00</span></p>
+            <a href="" class="pet"><span>Shop Now</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product">
+        <h3>German shepherd 5</h3>
+        <div class="card">
+          <div class="front">
+            <img src="../../img/dogLandingPage/Dog_Breeds/german_shepard.png" alt="" />
+          </div>
+          <div class="back">
+            <p class="info">Male|Female</p>
+            <p class="info">8 Weeks Old</p>
+            <p class="info cost">Rs.20000 <span>Rs. 30000.00</span></p>
+            <a href="" class="pet"><span>Shop Now</span></a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="product">
+        <h3>German shepherd 6</h3>
+        <div class="card">
+          <div class="front">
+            <img src="../../img/dogLandingPage/Dog_Breeds/german_shepard.png" alt="" />
+          </div>
+          <div class="back">
+            <p class="info">Male|Female</p>
+            <p class="info">8 Weeks Old</p>
+            <p class="info cost">Rs.20000 <span>Rs. 30000.00</span></p>
+            <a href="" class="pet"><span>Shop Now</span></a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="product">
+        <h3>German shepherd 7</h3>
+        <div class="card">
+          <div class="front">
+            <img src="../../img/dogLandingPage/Dog_Breeds/german_shepard.png" alt="" />
+          </div>
+          <div class="back">
+            <p class="info">Male|Female</p>
+            <p class="info">8 Weeks Old</p>
+            <p class="info cost">Rs.20000 <span>Rs. 30000.00</span></p>
+            <a href="" class="pet"><span>Shop Now</span></a>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="product">
+        <h3>German shepherd 8</h3>
+        <div class="card">
+          <div class="front">
+            <img src="../../img/dogLandingPage/Dog_Breeds/german_shepard.png" alt="" />
+          </div>
+          <div class="back">
+            <p class="info">Male|Female</p>
+            <p class="info">8 Weeks Old</p>
+            <p class="info cost">Rs.20000 <span>Rs. 30000.00</span></p>
+            <a href="" class="pet"><span>Shop Now</span></a>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="product">
+        <h3>German shepherd 9</h3>
+        <div class="card">
+          <div class="front">
+            <img src="../../img/dogLandingPage/Dog_Breeds/german_shepard.png" alt="" />
+          </div>
+          <div class="back">
+            <p class="info">Male|Female</p>
+            <p class="info">8 Weeks Old</p>
+            <p class="info cost">Rs.20000 <span>Rs. 30000.00</span></p>
+            <a href="" class="pet"><span>Shop Now</span></a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="product">
+        <h3>German shepherd 10</h3>
+        <div class="card">
+          <div class="front">
+            <img src="../../img/dogLandingPage/Dog_Breeds/german_shepard.png" alt="" />
+          </div>
+          <div class="back">
+            <p class="info">Male|Female</p>
+            <p class="info">8 Weeks Old</p>
+            <p class="info cost">Rs.20000 <span>Rs. 30000.00</span></p>
+            <a href="" class="pet"><span>Shop Now</span></a>
+          </div>
+        </div>
+      </div> -->
+      
+
+      <!-- <div class="product exploreMore">
+        <div class="explore"><a href="#" class="expBtn">Find More</a></div>
+      </div> -->
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <div class="explore"><a href="#" class="expBtn" style="display: none;">Explore More</a></div>
+  </section>
+
+  <section id="services" class="services">
+    <h3 class="heading">Our Services</h3>
+    <div class="services-list">
+      <div class="service">
+        <img src="../../img/dogLandingPage/Dog_Breeds/dog-accessory.png" alt="" />
+        <div class="content">
+          <h3>Accesories</h3>
+          <p>
+            Here, You can find all best deals on Accesories related to pet
+            including Toys,Harnesses
+          </p>
+          <a class="pet pet-service" href="#">Learn More</a>
+        </div>
+      </div>
+      <div class="service">
+        <img src="../../img/dogLandingPage/Dog_Breeds/dog-care.png" alt="" height="250px" width="250px" />
+        <h3>Pet Care</h3>
+        <p>Here You can find all the best medicines to care your Pet</p>
+        <a class="pet pet-service" href="#">Learn More</a>
+      </div>
+      <div class="service">
+        <img src="../../img/dogLandingPage/Dog_Breeds/dog-food.jpg" alt="" />
+        <h3>Food</h3>
+        <p>Feed Your Pet with Love , Affection and High Quality Food!</p>
+        <a class="pet pet-service" href="#">Learn More</a>
+      </div>
+      <div class="service">
+        <img src="../../img/dogLandingPage/Dog_Breeds/pet-salon.png" alt="" />
+        <h3>Saloon</h3>
+        <p>Every Pet deserves Celebrity Care</p>
+        <a class="pet pet-service" href="#">Learn More</a>
+      </div>
+      <div class="service">
+        <img src="../../img/dogLandingPage/Dog_Breeds/dog-training.png" alt="" />
+        <h3>Training</h3>
+        <p>Give You Pet the best training for desired behaviours</p>
+        <a class="pet pet-service" href="#">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <img src="" alt="" />
+    <div class="Delivered">
+      <span class="count">999</span>
+      <p>Dogs Delivered</p>
+    </div>
+
+    <div class="feedback">
+      <span class="count">99%</span>
+      <p>Positive Customers</p>
+    </div>
+
+    <div class="happy-families">
+      <span class="count">500</span>
+      <p>Happy Families</p>
+    </div>
+  </section>
+
+  <%- include("../components/footer"); %>
+
+
+  <!-- <a href="" class="pet"><span>Shop Now</span></a> -->
+  <!-- <button type="button" class="pet"><span>Shop Now</span></button> -->
+</body>
+
+</html>

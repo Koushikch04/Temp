@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../components/adminHeader.ejs'); %>
+    <link rel="stylesheet" href="../../css/Admin/adminDashboard.css" />
+  </head>
+  <body>
+    <% if(login) { %> <%- include("../components/adminLayout", { path:
+    "dashboard", pageHeading: "dashboard"}); %>
+
+    <main class="admin__main">
+      <section class="left">
+        <div class="overview__container">
+          <div class="overview__card">
+            <div class="overview__summary">
+              <h3>Total Views</h3>
+              <h2><%= count.countViews %></h2>
+              <small class="admin__text-muted">Overall</small>
+            </div>
+            <span class="material-icons-outlined"> visibility </span>
+          </div>
+
+          <div class="overview__card">
+            <div class="overview__summary">
+              <h3>Total Customers</h3>
+              <h2><%= count.countCustomers %></h2>
+              <small class="admin__text-muted">Overall</small>
+            </div>
+            <span class="material-icons-outlined"> groups </span>
+          </div>
+
+          <div class="overview__card">
+            <div class="overview__summary">
+              <h3>Total Orders</h3>
+              <h2><%= count.countOrders %></h2>
+              <small class="admin__text-muted">Overall</small>
+            </div>
+            <span class="material-icons-sharp">
+              production_quantity_limits
+            </span>
+          </div>
+
+          <div class="overview__card">
+            <div class="overview__summary">
+              <h3>Total Products</h3>
+              <h2><%= count.countProducts %></h2>
+              <small class="admin__text-muted">Overall</small>
+            </div>
+            <span class="material-icons-sharp"> inventory_2 </span>
+          </div>
+
+          <div class="overview__card">
+            <div class="overview__summary">
+              <h3>Total Employees</h3>
+              <h2><%= count.countEmployees %></h2>
+              <small class="admin__text-muted">Overall</small>
+            </div>
+            <span class="material-icons-sharp"> people </span>
+          </div>
+
+          <div class="overview__card">
+            <div class="overview__summary">
+              <h3>Total Sales</h3>
+              <h2>₹<%= count.countSales %></h2>
+              <small class="admin__text-muted">Overall</small>
+            </div>
+            <span class="material-icons-sharp"> trending_up </span>
+          </div>
+        </div>
+
+        <div class="recent-orders__container">
+          <h2 class="recent-orders__heading">Recent Orders</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Product Name</th>
+                <th>User Name</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for(let i = 0; i < order.length; i++) {%> <% let date = new
+              Date(order[i].createdAt); %> <% let dateString = new
+              Date(date.getTime() - (date.getTimezoneOffset() * 60000
+              )).toISOString().split("T")[0]; %>
+              <tr>
+                <td><%= dateString %></td>
+                <td><%= order[i].prodId.productDetails.Name %></td>
+                <td><%= order[i].userId.name.firstName %></td>
+                <td><%= order[i].status %></td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+          <a href="/profile/admin/orders">Show All</a>
+        </div>
+      </section>
+
+      <section class="right">
+        <div class="recent-updates">
+          <h2>Recent Updates</h2>
+          <div class="updates__container">
+            <div class="update__box">
+              <img src="../../img/Admin/profile1.jpg" alt="" />
+              <div class="details">
+                <p><b>Hanna</b> received her order of dog foods</p>
+                <small class="admin__text-muted">3 minutes ago</small>
+              </div>
+            </div>
+
+            <div class="update__box">
+              <img src="../../img/Admin/profile1.jpg" alt="" />
+              <div class="details">
+                <p><b>Hanna</b> received her order of dog foods</p>
+                <small class="admin__text-muted">3 minutes ago</small>
+              </div>
+            </div>
+
+            <div class="update__box">
+              <img src="../../img/Admin/profile1.jpg" alt="" />
+              <div class="details">
+                <p><b>Hanna</b> received her order of dog foods</p>
+                <small class="admin__text-muted">3 minutes ago</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="sales-reports">
+          <h2>Sales Analytics</h2>
+          <div class="sales__box">
+            <span class="material-icons-sharp primary"> shopping_cart </span>
+            <div class="details">
+              <p class="box_heading">Online Orders</p>
+              <small class="admin__text-muted">Last 24 hrs</small>
+            </div>
+            <p class="percentage admin__primary">+39%</p>
+            <p class="number">3889</p>
+          </div>
+
+          <div class="sales__box">
+            <span class="material-icons-sharp danger"> person_add_alt </span>
+            <div class="details">
+              <p class="box_heading">New Customers</p>
+              <small class="admin__text-muted">Last 24 hrs</small>
+            </div>
+            <p class="percentage admin__danger">-39%</p>
+            <p class="number">3889</p>
+          </div>
+
+          <div class="sales__box">
+            <span class="material-icons-sharp success"> receipt_long </span>
+            <div class="details">
+              <p class="box_heading">Total Sales</p>
+              <small class="admin__text-muted">Last 24 hrs</small>
+            </div>
+            <p class="percentage admin__primary">+39%</p>
+            <p class="number">3889</p>
+          </div>
+        </div> -->
+      </section>
+    </main>
+    <% } else { %>
+    <h1>No page found</h1>
+    <% } %>
+  </body>
+</html>

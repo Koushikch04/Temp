@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../components/adminHeader.ejs'); %>
+    <link rel="stylesheet" href="/css/Admin/adminMessages.css" />
+    <link rel="stylesheet" href="/css/components/adminListHeader.css" />
+    <link rel="stylesheet" href="/css/Modals/filterModal.css" />
+    <link rel="stylesheet" href="/css/components/adminMessagesRecords.css">
+  </head>
+  <body>
+    <% if(login) { %> <%- include("../components/adminLayout", { path :
+    "messages", pageHeading: "messages" }); %>
+
+    <main class="admin__main">
+      <div class="summary__container">
+        <div class="summary__card">
+          <div class="summary__card-details">
+            <h2>Total Messages Received</h2>
+            <h3><%= messageCount %></h3>
+            <small class="admin__text-muted">Overall</small>
+          </div>
+          <span class="material-icons-sharp admin__primary-back">
+            question_answer
+          </span>
+        </div>
+      </div>
+
+      <%- include('../components/adminListHeader.ejs', { sortList:
+      [{value: 0, name: "NewestFirst"}, {value: 1, name: "OldestFirst"}], filters: [], path: "/profile/admin/messages",
+      records: "Messages Records" }); %>
+    </main>
+
+    <div class="overlay no-show"></div>
+
+    <% } else { %>
+
+    <h1>No page found</h1>
+
+    <% } %>
+  </body>
+
+  <script src="/JavaScript/Admin/adminMessages.js"></script>
+  <script src="/JavaScript/components/adminListHeader.js"></script>
+</html>

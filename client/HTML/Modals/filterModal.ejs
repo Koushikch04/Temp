@@ -1,0 +1,46 @@
+<div class="filter__modal no-show">
+  <div class="filter__close">
+    <span class="material-icons-sharp close-filter" onclick="modalOpenOrClose()">
+      close
+    </span>
+  </div>
+
+  <div class="filters__container">
+    <% for(let i = 0; i < filters.length; i++) { %>
+    <div class="category">
+      <h3 class="category__heading">&#8618; <%= filters[i].category %></h3>
+      <input
+        type="radio"
+        name="<%= filters[i].category %>"
+        value="All"
+        id="<%= filters[i].category %>-all"
+        <%= filtersApplied[i] == "All" ? "checked" : null %>
+      />
+      <label
+        
+        for="<%= filters[i].category %>-all"
+        >All</label
+      >
+
+      <% for(let j = 0; j < filters[i].list.length; j++) { %>
+      <input
+        type="radio"
+        name="<%= filters[i].category %>"
+        value="<%=
+        filters[i].list[j] %>"
+        id="<%= filters[i].list[j] %>"
+        <%= filtersApplied[i] == filters[i].list[j] ? "checked" : null %>
+      />
+      <label
+        for="<%= filters[i].list[j] %>"
+        ><%= filters[i].list[j] %></label
+      >
+      <% } %>
+    </div>
+    <% } %>
+  </div>
+
+  <div class="apply-form">
+    <input type="submit" value="Apply Filters" />
+  </div>
+</div>

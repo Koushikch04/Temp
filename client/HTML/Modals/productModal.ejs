@@ -1,0 +1,37 @@
+<form method="post" action="/profile/admin/products" class="product__modal no-show">
+  <div class="filter__close">
+    <span
+      class="material-icons-sharp close-filter"
+      onclick="addProductModalOpenOrClose()"
+    >
+      close
+    </span>
+  </div>
+
+  <div class="input__container">
+    <div class="input__box">
+        <label for="petType">Pet Type:</label>
+        <input type="text" id="petType" name="petType" placeholder="Pet Type">
+    </div>
+    <div class="input__box">
+        <label for="productType">Product Type:</label>
+        <input type="text" id="productType" name="productType" placeholder="Product Type">
+    </div>
+    <div class="input__box">
+        <label for="productName">Product Name:</label>
+        <input type="text" id="productName" name="productName" placeholder="Product Name">
+    </div>
+    <div class="input__box">
+        <label for="productPrice">Product Price:</label>
+        <input type="text" id="productPrice" name="productPrice" placeholder="Product Price">
+    </div>
+    <div class="input__box">
+        <label for="productImage">Image URL:</label>
+        <input type="text" id="productImage" name="productImage" placeholder="Image URL">
+    </div>
+  </div>
+
+  <div class="apply-form">
+    <input type="submit" value="Add Product" />
+  </div>
+</form>

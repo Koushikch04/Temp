@@ -1,0 +1,107 @@
+body {
+    margin-top: 20px;
+    background-color: lightgrey;
+}
+
+.main {
+    padding: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.topbar {
+    background-color: teal;
+    overflow: hidden;
+}
+
+.topbar a {
+    float: right;
+    color: whitesmoke;
+    text-align: center;
+    padding: 20px 26px;
+    text-decoration: none;
+    font-size: 26px;
+}
+
+.sidebar {
+    background-color: #333;
+    color: white;
+    height: 100%;
+}
+
+.sidebar a {
+    margin-left: 10px;
+    display: block;
+    color: white;
+    padding-bottom: 10px;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* background-color: aqua; */
+}
+
+.content {
+    background-color: whitesmoke;
+}
+
+.mt-3 h3 {
+    color: black;
+}
+
+.mt-3 a {
+    color: black;
+}
+
+.sidebar .card-body {
+    background-color: rgb(125, 170, 169);
+}
+
+/* update profile start */
+.updatebox{
+    background-color: rgb(125, 170, 169);
+    width :auto;
+    max-width: 600px;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    padding: 25px;  
+    /* display: none; */
+}
+.updatebox.inactive{
+    display: none;
+}
+.updatebox i{
+    position: absolute;
+    font-size: 2rem;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    cursor: pointer;
+}
+.updatebox input{
+    border-radius: 30px;
+}
+
+/* update profile end */
+
+/* order box */
+/* .appointmentbox{
+    background-color: rgb(125, 170, 169);
+    border: 2px solid black;
+    border-radius: 30px;
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    padding: 10px;
+} */
+
+.appointmentbox{
+    background-color: rgb(125, 170, 169); 
+    border: 2px solid black;
+    border-radius: 30px;
+    padding: 10px;
+    width: 350px;
+}

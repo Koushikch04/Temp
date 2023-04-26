@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fish website</title>
+  <link rel="stylesheet" href="../../css/LandingPages/fishLandingPage.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <script src="../../JavaScript/LandingPages/petsLandingPage.js" defer></script>
+</head>
+
+<body>
+  <%- include("../components/navbar", {notlogin}); %>
+
+
+
+    <section class="home" id="home">
+      <div class="content">
+        <h3>Enjoy the joy of <span>Owning fish</span></h3>
+        <a href="#" class="glow-on-hover">Shop Now</a>
+      </div>
+      <img src="../../img/fishLandingPage/bottom_wave.png" alt="" class="wave" />
+    </section>
+
+    <p class="prices-data" style="display: none;"> <%= pricesData.join(","); %></p>
+    <p class="names-data" style="display: none;"><%= productNamesData.join(",") %></p>
+    <p class="src-data" style="display: none;"><%= imgsrcData.join(",") %></p>
+
+    <p class="cart-Names" style="display: none;"> <%= cartNames.join(","); %></p>
+    <p class="cart-Prices" style="display: none;"> <%= cartPrices.join(","); %></p>
+    <p class="cart-src" style="display: none;"> <%= cartSrc.join(","); %></p>
+  
+  
+    <section id="Shop-Fish" class="Shop-Fish">
+      <h3 class="detail">
+        <span class="word1">Our</span> <span class="word2"> Popular</span>
+        <span class="word3"> Breeds</span>
+      </h3>
+
+      <div class="search-bar">
+        <div class="search" id="filter-search">
+           <input type="text" class="searchTerm" placeholder="What are you looking for?" ">
+           <button class="searchButton" onclick="searchItems()">
+             <i class="fa fa-search"></i>
+          </button>
+        </div>
+     </div>
+  
+      <button class="filter-btn" onclick="expandFilter()">Filter</button> 
+      <div class="filter-options" id="filter-options" style="background-color: white;">
+      <button class="filter-option price" onclick="filter('price')">Price</button>
+      <button class="filter-option name" onclick="filter('name')">Name</button>
+    </div>
+          <div class="products">
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <div class="explore">
+        <a href="#" id="exploreMore" class="expBtn" style="display: none;">Explore More</a>
+      </div>
+    </section>
+
+    <section id="services" class="services">
+      <h3 class="heading">Our Services</h3>
+      <div class="services-list">
+        <div class="service">
+          <img src="../../img/fishLandingPage/Fish_Images/fish_accessories.png" alt="" />
+          <div class="content">
+            <h3>Accessories</h3>
+            <p>
+              Here, You can find all best deals on Accesories related to pet
+              including Toys,Harnesses
+            </p>
+            <a class="pet pet-service" href="#">Learn More</a>
+          </div>
+        </div>
+        <div class="service">
+          <img src="../../img/fishLandingPage/Fish_Images/fish_care.png" alt="" height="250px" width="250px" />
+          <h3>Pet Care</h3>
+          <p>Here You can find all the best medicines to care your Pet</p>
+          <a class="pet pet-service" href="#">Learn More</a>
+        </div>
+        <div class="service">
+          <img src="../../img/fishLandingPage/Fish_Images/fish_food.png" alt="" />
+          <h3>Food</h3>
+          <p>Feed Your Pet with Love , Affection and High Quality Food!</p>
+          <a class="pet pet-service" href="#">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="Delivered">
+        <span class="count">999</span>
+        <p>Fishes Delivered</p>
+      </div>
+
+      <div class="feedback">
+        <span class="count">99%</span>
+        <p>Positive Customers</p>
+      </div>
+
+      <div class="happy-families">
+        <span class="count">500</span>
+        <p>Happy Families</p>
+      </div>
+    </section>
+
+    <%- include("../components/footer"); %>
+
+
+    <!-- <a href="" class="pet"><span>Shop Now</span></a> -->
+    <!-- <button type="button" class="pet"><span>Shop Now</span></button> -->
+</body>
+
+</html>

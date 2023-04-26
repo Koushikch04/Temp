@@ -1,0 +1,68 @@
+.message__records-grid {
+    display: grid;
+    grid-template-columns: 4rem 2rem 11rem 13rem 20rem 1fr 15rem;
+    column-gap: 2rem;
+    row-gap: 3rem;
+    padding: 1rem 2rem;
+    padding-bottom: 4rem;
+    /* margin-bottom: 3rem; */
+    
+}
+
+.message-heading {
+    width: 100%;
+    border-bottom: 3px solid var(--color-dark);
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    justify-content: center;
+}
+
+.message__records-grid input {
+    height: 1.6rem;
+    width: 1.6rem;
+}
+
+.message-checkbox {
+    align-self: center;
+    justify-self: center;
+    padding: 1rem 0rem;
+    cursor: pointer;
+}
+
+.message-date {
+    align-self: center;
+    justify-self: center;
+    padding: 1rem 0rem;
+}
+
+.message-reply {
+    align-self: center;
+    justify-self: center;
+    padding: 1rem 0rem;
+    color: var(--color-primary);
+}
+
+.message__records-grid input[type='checkbox'] {
+    accent-color: var(--color-danger);
+}
+
+.message__records-grid p {
+    font-size: 1.6rem;
+}
+
+.pending {
+    color: var(--color-danger);
+}
+
+.delivered {
+    color: var(--color-success);
+}
+
+.message__records-grid h3.no-records {
+    color: #6f7b89;
+    font-size: 4rem;
+    grid-column: 1 / -1;
+    justify-self: center;
+    letter-spacing: 1px;
+}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../components/adminHeader.ejs'); %>
+    <link rel="stylesheet" href="../../css/Admin/adminCustomers.css" />
+  </head>
+  <body>
+    <% if(login) { 
+        %> <%- include("../components/adminLayout", { path : "employees", pageHeading:
+      "employees" }); %> 
+        
+    
+    <% } else { %>
+    <h1>No page found</h1>
+    <% } %>
+  </body>
+</html>

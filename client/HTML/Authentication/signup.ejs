@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet" />
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" />
+
+  <link rel="stylesheet" href="/css/Authentication/signup.css" />
+  <link rel="stylesheet" href="/css/helper/message.css" />
+</head>
+
+<body>
+  <% if (error) { %>
+    <div class="messageUp">
+      <%= message %>
+    </div>
+    <% } %>
+      <div class=" background"></div>
+      <header>
+        <div class="container">
+          <ul>
+            <li>
+              <a href="/" class="logo">
+                <div class="images">
+                  <span class="material-icons-outlined">
+                    pets
+                  </span>
+                </div>
+                <h2>Pets <span>Paradise.</span></h2>
+              </a>
+            </li>
+            <li><a href="/" class="nav-link">Home</a></li>
+
+          </ul>
+        </div>
+      </header>
+
+      <main>
+        <section class="contact">
+          <div class="container">
+            <div class="left">
+              <img src="../../img/Authentication/signup-video.gif" class="img" alt="" />
+            </div>
+
+            <div class="right">
+              <div class="form-wrapper">
+                <div class="contact-heading">
+                  <h1>Create An Account<span>!</span></h1>
+                  <p class="text">
+                    Create an Account and take good care of your pet!
+                  </p>
+                </div>
+
+                <form action="/auth/user/signup" method="post" class="contact-form">
+                  <div class="input-wrap">
+                    <input type="text" class="contact-input" name="FirstName" required autocomplete="off" />
+                    <label>First Name</label>
+                    <i class="icon fa-solid fa-address-card"></i>
+                  </div>
+
+                  <div class="input-wrap">
+                    <input type="text" class="contact-input" name="LastName" required autocomplete="off" />
+                    <label>Last Name</label>
+                    <i class="icon fa-solid fa-address-card"></i>
+                  </div>
+
+                  <div class="input-wrap w-100">
+                    <input type="email" class="contact-input" name="Email" required autocomplete="off" id="user-mail" />
+                    <label>Email</label>
+                    <i class="icon fa-solid fa-envelope"></i>
+                    <p id="mail-error"></p>
+                  </div>
+
+                  <div class="input-wrap w-100">
+                    <input type="password" class="contact-input" name="Password" required autocomplete="off"
+                      id="user-password" />
+                    <label id="password-label">Password</label>
+                    <i class="icon fa-solid fa-lock"></i>
+                    <p id="password-error"></p>
+                  </div>
+
+                  <div class="input-wrap w-100">
+                    <input type="password" class="contact-input" name="ConfirmPassword" required autocomplete="off"
+                      id="user-confirm" />
+                    <label>Confirm Password</label>
+                    <i class="icon fa-solid fa-lock"></i>
+                    <p id="confirm-error"></p>
+                  </div>
+
+                  <div class="contact-buttons">
+                    <input type="submit" value="Sign up" class="btn" />
+                  </div>
+
+                  <!-- <div class="google-button">
+                    <button class="btn google" type="button">
+                      <img alt='Google "G" Logo'
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/16px-Google_%22G%22_Logo.svg.png" />
+                      <p>Sign Up With Google</p>
+                    </button>
+                  </div> -->
+
+                  <div class="no-account">
+                    <p>Already have an account? <a href="login">Sign in</a></p>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+
+          </div>
+        </section>
+      </main>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"></script>
+
+      <script src="../../JavaScript/Authentication/loginSignUp.js"></script>
+</body>
+
+</html>

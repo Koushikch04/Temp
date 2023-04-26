@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food</title>
+    
+    <!-- swiper  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+    <!-- custom css file -->
+    <link rel="stylesheet" href="../../css/LandingPages/petfoodLandingPage.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" />  
+</head>
+<body>
+
+    <!-- header start -->
+    <%- include("../components/navbar", {notlogin}); %>
+
+    <p class="data" style="display: none"><%= pets %></p>
+    <p class="revdata" style="display: none"><%= rev %></p>
+    <!-- header end -->
+
+    <!-- home start -->`
+    <section class="home" id="home">
+        <div class="content">
+            <h3>healthy and <span>nutritious</span> food for your pets</h3>
+            <p>Take The First Step Towards Keeping Your Pet Healthy And Magnificent For Years To Come. Give Him Or Her The Best Start In Life. Discover What We Can Do For You. Healthy and Nutritious Food.</p>
+            <a href="#products" class="btn">Shop now</a>
+        </div>
+    </section>
+    <!-- home end -->
+
+    <!-- features start -->
+    <section class="features" id="features">
+        <h1 class="heading">Our <span>features</span></h1>
+        <div class="box-container">
+            <div class="box">
+                <img src="../../img/foodservicesLandingPage/fea1.jpg" style="width:200px">
+                <h3>healthy and nutritious</h3>
+                <p>Complete and balanced daily food for dogs and cats, plant based, OGM free, drug residue-free, and no gluten formula.</p>
+                <a href="#" class="btn">read more</a>
+            </div>
+
+            <div class="box">
+                <img src="../../img/foodservicesLandingPage/fea2.jpg" style="width:200px">
+                <h3>Doctors recommended brands</h3>
+                <p>All the food brands we present to you are doctors recommended brands.</p>
+                <a href="#" class="btn">read more</a>
+            </div>
+
+            <div class="box">
+                <img src="../../img/foodservicesLandingPage/fea3.png" style="width:200px">
+                <h3>easy payment</h3>
+                <p>We provide a user friendly interface which is easy to understand, and make your experience better than ever.</p>
+                <a href="#" class="btn">read more</a>
+            </div>
+        </div>
+    </section>
+    <!-- features end -->
+
+    <!-- categories start -->
+    <section class="categories" id="categories">
+        <h1 class="heading">Product <span>categories</span></h1>
+        <div class="box-container">
+            <div class="box">
+                <img src="../../img/foodservicesLandingPage/dogFood6.jpg" style="width:200px;">
+                <h3>Dog food</h3>
+                <p>for all breeds</p>
+                <a href="#products" class="btn">shop now</a>
+            </div>
+            <div class="box">
+                <img src="../../img/foodservicesLandingPage/catFood6.jpg" style="width:200px;">
+                <h3>Cat food</h3>
+                <p>for all breeds</p>
+                <a href="#products" class="btn">shop now</a>
+            </div>
+            <div class="box">
+                <img src="../../img/foodservicesLandingPage/birdFood5.jpg" style="width:200px;">
+                <h3>Bird food</h3>
+                <p>for specific breeds</p>
+                <a href="#products" class="btn">shop now</a>
+            </div>
+            <div class="box">
+                <img src="../../img/foodservicesLandingPage/fishFood5.jpg" style="width:200px;">
+                <h3>Fish food</h3>
+                <p>for all breeds</p>
+                <a href="#products" class="btn">shop now</a>
+            </div>
+        </div>
+    </section>
+    <!-- categories end -->
+
+    <!-- products start -->
+    <section class="products" id="products">
+        <h1 class="heading">our <span>products</span></h1>
+
+        <div class="wrapper">
+            <div id="search-container">
+             <input type="search" id="search-input" placeholder="Search for items">
+             <button id="search">Search</button>
+            </div>
+            <div id="buttons">
+                <a href="#products" class="button-value" onclick="reefresh()" value="all">All</a>
+                <a href="#products"  class="button-value" onclick="refresh()" value="dog">Dog</a>
+                <a href="#products"  class="button-value" onclick="refresh()" value="cat">Cat</a>    
+                <a href="#products"  class="button-value" onclick="refresh()" value="bird">Bird</a>
+                <a href="#products"  class="button-value" onclick="refresh()" value="fish">Fish</a>
+                <a href="#products"  class="button-value" onclick="filterProduct('all')" value="price">Price</a>
+            </div>
+            <div id="view-products"></div>
+        </div>
+
+            <div class="product-content">
+
+            </div>
+        <div class="view-more">
+            <center><button href="#products" class="btn viewbtn">View more</button></center>
+        </div>
+        
+
+    </section>
+    <!-- products end -->
+
+    <!-- reviews start -->
+    <section class="review" id="review">
+        <h1 class="heading">Customer's <span>review</span></h1>
+        <div class="review-slider">
+            
+        </div>
+        <div class="rev-form">
+            <form action="petsfoods/reviewform" method="post">
+                <h2>Please enter your Review</h2>
+                <label for="revtext"></label>
+                <textarea name="revtext" id="revtext" cols="90" rows="5" placeholder="Enter your thougths about our website"></textarea>
+                <br><br>
+                <button class="btn rev-sub">Submit</button>
+            </form>
+        </div>
+    </section>
+    <!-- reviews end -->
+
+    <%- include("../components/footer"); %>
+
+    <!-- custom js file link  -->
+    <script src="../../JavaScript/LandingPages/petfoodLandingPage.js"></script>
+</body>
+</html>

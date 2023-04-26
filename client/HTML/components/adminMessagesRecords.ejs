@@ -1,0 +1,35 @@
+<div class="message__records-grid">
+  <h3 class="message-heading">S.No.</h3>
+  <h3></h3>
+  <h3 class="message-heading">Date</h3>
+  <h3 class="message-heading">Time</h3>
+  <h3 class="message-heading">Name</h3>
+  <h3 class="message-heading">Email</h3>
+  <h3 class="message-heading">Message</h3>
+  <h3></h3>
+
+  <% if(messages.length > 0) { %> <% for(let i = (currentPage-1)*limit; i < currentPage*limit && i < messages.length; i++) {
+  %>
+  <p class="message-date"><%= i+1 %></p>
+  <input
+    type="checkbox"
+    class="message-checkbox"
+    name="deleteMessage"
+    value="<%= messages[i]._id %>"
+  />
+  <% let date = new Date(messages[i].createdAt); %> <% let dateString = new
+  Date(date.getTime() - (date.getTimezoneOffset() * 60000
+  )).toISOString().split("T")[0]; %>
+  <p class="message-date"><%= dateString %></p>
+  <% let localTime = date.toLocaleTimeString('en-US'); %>
+  <p class="message-date"><%= localTime %></p>
+  <p class="message-date"><%= messages[i].name %></p>
+  <p class="message-date"><%= messages[i].email %></p>
+  <p class="message-date"><%= messages[i].message %></p>
+  <a href="mailto:<%= messages[i].email %>"
+    ><span class="material-icons-sharp message-reply"> reply </span></a
+  >
+  <% } %> <% } else { %>
+  <h3 class="no-records">No records found</h3>
+  <% } %>
+</div>

@@ -1,0 +1,214 @@
+.admin__main {
+    margin-left: 17%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 2rem;
+}
+
+.admin__main .left .overview__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2.5rem;
+    row-gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.admin__main .left .overview__container .overview__card {
+    padding: var(--card-padding);
+    /* background-color: red; */
+    border-radius: var(--card-border-radius);
+    background: var(--color-white);
+    box-shadow: var(--box-shadow);
+    transition: all .3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin__main .left .overview__container .overview__card:hover {
+    box-shadow: none;
+}
+
+.admin__main .left .overview__container .overview__card span {
+    background: var(--color-primary);
+    padding: 0.8rem;
+    border-radius: 50%;
+    color: var(--color-white);
+    font-size: 3rem;
+}
+
+.admin__main .left .overview__container .overview__card h2 {
+    letter-spacing: .5px;
+    margin-bottom: .3rem;
+    margin-top: 1rem;
+}
+
+.admin__main .left .overview__container .overview__card h3 {
+    letter-spacing: .5px;
+    padding-top: -.5rem;
+}
+
+.recent-orders__container h2 {
+    letter-spacing: .5px;
+    margin-bottom: 2rem;
+}
+
+.recent-orders__container table {
+    background: var(--color-white);
+    width: 100%;
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: all .3s ease;
+    margin-bottom: 2rem;
+}
+
+.recent-orders__container table:hover {
+    box-shadow: none;
+}
+
+.recent-orders__container table thead th {
+    font-family: 'poppins', sans-serif;
+    font-size: 1.6rem;
+}
+
+.recent-orders__container table thead tr {
+    margin-bottom: 1rem;
+}
+
+.recent-orders__container table tbody td {
+    /* font-family: 'poppins', sans-serif; */
+    height: 3.2rem;
+    border-bottom: 1px solid var(--color-light);
+    color: var(--color-dark-variant);
+    font-size: 1.6rem;
+}
+
+tbody:before {
+    content: "-";
+    display: block;
+    line-height: .8em;
+    color: transparent;
+}
+
+.recent-orders__container table tbody td.admin__primary {
+    color: var(--color-primary);
+}
+
+.recent-orders__container table tbody tr:last-child td {
+    border: none;
+}
+
+.recent-orders__container a {
+    text-align: center;
+    display: block;
+    margin: 1rem auto;
+    font-size: 1.6rem;
+    color: var(--color-primary);
+    margin-bottom: 2rem;
+}
+
+.right {
+    width: 33rem;
+}
+
+.right .recent-updates h2 {
+    letter-spacing: .5px;
+    margin-bottom: 2rem;
+}
+
+.right .recent-updates .updates__container {
+    padding: var(--card-padding);
+    background-color: var(--color-white);
+    border-radius: var(--card-border-radius);
+    padding-left: 2rem;
+    padding-right: 2rem;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 4rem;
+}
+
+.right .recent-updates .updates__container:hover {
+    box-shadow: none;
+}
+
+.updates__container .update__box {
+    display: flex;
+    gap: .6rem;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+.updates__container .update__box:last-child {
+    margin-bottom: 0;
+}
+
+.updates__container .update__box img {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.updates__container .update__box .details p {
+    font-size: 1.4rem;
+    margin-bottom: .5rem;
+}
+
+.right .sales-reports h2 {
+    letter-spacing: .5px;
+    margin-bottom: 2rem;
+}
+
+.right .sales__box {
+    padding: var(--card-padding);
+    background-color: var(--color-white);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 4rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+
+.right .sales__box:hover {
+    box-shadow: none;
+}
+
+.right .sales-reports .sales-box__container .sales__box:last-child {
+    margin-bottom: 0;
+}
+
+.right .sales__box p {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.box_heading {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: .8rem;
+    color: #000;
+    letter-spacing: .5px;
+}
+
+.right .sales__box span {
+    border-radius: 50%;
+    padding: .7rem;
+    color: var(--color-white);
+}
+
+.right .sales__box span.primary {
+    background-color: var(--color-primary);
+}
+
+.right .sales__box span.danger {
+    background-color: var(--color-danger);
+}
+
+.right .sales__box span.success {
+    background-color: var(--color-success);
+}

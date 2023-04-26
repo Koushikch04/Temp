@@ -1,0 +1,120 @@
+.no-show {
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+}
+
+.filter__modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  background-color: white;
+  padding: 3rem 4rem;
+  border-radius: 50px;
+  font-family: var(--roboto-text);
+}
+
+.filter__close {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+}
+
+.close-filter {
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+.filter__modal h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 5px;
+}
+
+.filters__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+
+.filters__container .category {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.filters__container .category input {
+  visibility: hidden;
+  display: none;
+}
+
+.filters__container .category label {
+  background-color: var(--color-white);
+  padding: .5rem 1rem;
+  border-radius: 50px;
+  border: 2px solid var(--color-primary);
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: all .25s;
+  font-family: var(--roboto-text);
+  width: fit-content;
+}
+
+.filters__container h3 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  color: var(--color-primary);
+}
+
+.filters__container .category label {
+  cursor: pointer;
+}
+
+.filters__container .category label:hover,
+.filters__container .category input[checked]+label {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.apply-form {
+  width: 100%;
+  margin-top: 6rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.apply-form input {
+  padding: 1rem 2rem;
+  background-color: var(--color-primary);
+  border-radius: 50px;
+  color: white;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: all .25s;
+}
+
+.apply-form input:hover {
+  background-color: var(--button-hover-color);
+}

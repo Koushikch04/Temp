@@ -1,0 +1,266 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+
+
+:root {
+    /* --color-primary: #7380ec; */
+    --main-hue: 208;
+    --color-primary: hsl(var(--main-hue), 92%, 54%);
+    --roboto-text: "Roboto", sans-serif;
+
+    --color-danger: #FA5F55;
+    --color-success: #00a36c;
+    --color-warning: #ffbb55;
+    --color-white: #fff;
+    --color-info-dark: #7d8da1;
+    --color-info-light: #dce1eb;
+    --color-dark: #363949;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --color-primary-variant: #111e88;
+    --color-dark-variant: #677483;
+    --color-background: #f6f6f9;
+    --card-border-radius: 2.4rem;
+    --border-radius-1: 0.7rem;
+    --border-radius-2: 1.1rem;
+    --border-radius-3: 1.7rem;
+    --card-padding: 2.6rem;
+    --padding-1: 1.6rem;
+    --box-shadow: 0 2.6rem 3.7rem var(--color-light);
+    --button-hover-color: #0a2540;
+    --size-1: 56.25em;
+    /*900 pixel*/
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    outline: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    width: 100vw;
+    font-family: var(--roboto-text);
+    font-size: 1rem;
+    background-color: var(--color-background);
+    user-select: none;
+    color: var(--color-dark);
+    overflow-x: hidden;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+a {
+    color: var(--color-dark);
+    font-family: var(--roboto-text);
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 1px;
+    font-size: 2.2rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.3rem;
+}
+
+h5 {
+    font-size: 1.1rem;
+}
+
+small {
+    font-size: 1.1rem;
+}
+
+p {
+    color: var(--color-dark-variant);
+}
+
+b {
+    color: var(--color-dark);
+}
+
+.admin__text-muted {
+    color: var(--color-info-dark);
+}
+
+.admin__danger {
+    color: var(--color-danger);
+}
+
+.admin__success {
+    color: var(--color-success);
+}
+
+.admin__primary {
+    color: var(--color-primary);
+}
+
+.admin__warning {
+    color: var(--color-warning);
+}
+
+.admin__success-back {
+    background-color: var(--color-success);
+}
+
+.admin__primary-back {
+    background-color: var(--color-primary);
+}
+
+.admin__danger-back {
+    background-color: var(--color-danger);
+}
+
+.admin__violet-back {
+    background-color: var(--color-primary-variant);
+}
+
+.admin__header {
+    display: flex;
+    margin-top: 1.8rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    /* position: fixed; */
+}
+
+.admin__logo {
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+    justify-content: center;
+    position: fixed;
+    padding-left: 1.5rem;
+}
+
+.admin__logo h2{
+    letter-spacing: 1px;
+}
+
+.admin__profile {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    /* padding-right: 2rem; */
+}
+
+.admin__page-title {
+    margin-left: 17%;
+}
+.admin__details p {
+    font-size: 1.6rem;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+}
+
+.admin__details small {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.admin__profile-pic {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.admin__sidebar {
+    width: 14%;
+    height: 100%;
+    height: 90vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: flex-start;
+    /* margin-top: 3rem; */
+}
+
+aside.admin__sidebar a {
+    color: var(--color-info-dark);
+}
+aside .admin__menu-item {
+    display: flex;
+    padding-left: 3rem;
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
+}
+
+aside h3 {
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+}
+
+aside .admin__menu-item span,
+aside .admin__sidebar-box span {
+    transition: all .25s ease-in;
+}
+
+aside .admin__active {
+    border-left: 6px solid var(--color-primary);
+    padding-left: calc(3rem - 6px);
+    background: var(--color-light);
+
+}
+
+aside .admin__active span, 
+aside .admin__active h3 {
+    color: var(--color-primary);
+}
+
+aside .admin__menu-item:hover span {
+    margin-left: 1.6rem;
+}
+
+aside .admin__sidebar-box {
+    width: 100%;;
+    display: flex;
+    justify-content: center;
+    margin-top: 20rem;
+}
+
+aside .admin__sidebar-box a {
+    display: flex;
+    padding-left: 3rem;
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
+}
+
+aside .admin__sidebar-box:hover span {
+    margin-left: 1.6rem;
+}

@@ -1,0 +1,33 @@
+<div class="message__records-grid">
+    <h3 class="message-heading">S.No.</h3>
+    <h3></h3>
+    <h3 class="message-heading">Date</h3>
+    <h3 class="message-heading">Time</h3>
+    <h3 class="message-heading">UserName</h3>
+    <h3 class="message-heading">ProductName</h3>
+    <h3 class="message-heading">Status</h3>
+    <!-- <h3></h3> -->
+  
+    <% if(messages.length > 0) { %> <% for(let i = (currentPage-1)*limit; i < currentPage*limit && i < messages.length; i++) {
+    %>
+    <p class="message-date"><%= i+1 %></p>
+    <input
+      type="checkbox"
+      class="message-checkbox"
+      name="deleteMessage"
+      value="<%= messages[i]._id %>"
+    />
+    <% let date = new Date(messages[i].createdAt); %> <% let dateString = new
+    Date(date.getTime() - (date.getTimezoneOffset() * 60000
+    )).toISOString().split("T")[0]; %>
+    <p class="message-date"><%= dateString %></p>
+    <% let localTime = date.toLocaleTimeString('en-US'); %>
+    <p class="message-date"><%= localTime %></p>
+    <p class="message-date"><%= messages[i].userId.name.firstName %></p>
+    <p class="message-date"><%= messages[i].prodId.productDetails.Name %></p>
+    <p class="message-date <%= messages[i].status %>"><%= messages[i].status %></p>
+    <% } %> <% } else { %>
+    <h3 class="no-records">No records found</h3>
+    <% } %>
+  </div>
+  

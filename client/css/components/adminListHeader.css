@@ -1,0 +1,248 @@
+.message__records h2 {
+    font-size: 2rem;
+    letter-spacing: .5px;
+    margin-bottom: 3rem;
+}
+
+.records__container {
+    width: 100%;
+    background-color: var(--color-white);
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+}
+
+.records__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.sort__section {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    width: 50%;
+}
+
+.sort__section h3 {
+    letter-spacing: 1px;
+    font-size: 1.6rem;
+}
+
+.sort__section #modeForm {
+    display: flex;
+    gap: .5rem;
+}
+
+.sort__section #modeForm button input {
+    /* height: 0;
+    width: 0;
+    background-color: #fff; */
+    visibility: hidden;
+    display: none;
+}
+
+.sort__section #modeForm button {
+    background-color: var(--color-white);
+    padding: .5rem 1rem;
+    border-radius: 50px;
+    border: 2px solid var(--color-primary);
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: all .25s;
+    font-family: var(--roboto-text);
+    width: fit-content;
+}
+
+.sort__section #modeForm button label {
+    cursor: pointer;
+}
+
+.sort__section #modeForm button:hover,
+.sort__section #modeForm button:has(input[checked]) {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.search__section input.search {
+    padding: 1rem;
+    background-color: var(--color-light);
+    padding-left: 2rem;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    font-size: 1.6rem;
+    font-family: var(--roboto-text);
+    width: 40rem;
+}
+
+.search__section button.search__button {
+    padding: 1rem;
+    background-color: var(--color-primary);
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    font-size: 1.6rem;
+    font-family: var(--roboto-text);
+    color: var(--color-white);
+    cursor: pointer;
+}
+
+.records__header-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    border-top: 1px solid var(--color-light);
+}
+
+.records__header-2 h3 {
+    letter-spacing: .2px;
+}
+
+.filters__modal {
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .6rem;
+    background-color: var(--color-light);
+    padding: .8rem 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.filters__modal button {
+    font-size: 1.8rem;
+    font-family: inherit;
+    color: #363949;
+    cursor: pointer;
+}
+
+.filters__modal-disable {
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .6rem;
+    padding: .8rem 1.2rem;
+    background-color: #C0C0C0;
+    border-radius: 50px;
+    cursor: not-allowed;
+}
+
+.filters__modal-disable button {
+    font-size: 1.8rem;
+    font-family: inherit;
+    color: #ccc;
+    cursor: not-allowed;
+
+}
+
+.message__records-container {
+    margin-top: 1rem;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.message__records-header {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.6rem;
+    align-items: center;
+}
+
+.select-all {
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.message__records-header input {
+    height: 1.6rem;
+    width: 1.6rem;
+    cursor: pointer;
+}
+.message__records-header button {
+    padding: 1rem 2rem;
+    background-color: var(--color-danger);
+    color: #fff;
+    font-size: 1.6rem;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+input[type='checkbox'] {
+    accent-color: var(--color-danger);
+}
+
+.pagination-container {
+    border-top: 2px solid var(--color-light);
+    background-color: #fff;
+    padding: 4rem;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+    font-family: var(--roboto-text);
+}
+
+.pagination-container input {
+    display: none;
+}
+
+.pagination-container button {
+    padding: .5rem;
+    font-size: 1.6rem;
+    border: 3px solid var(--color-primary);
+    cursor: pointer;
+}
+
+.pagination-container button.previous,
+.pagination-container button.next {
+    pointer-events:none;
+}
+
+.pagination-container button:hover,
+.pagination-container button:has(input[checked]) {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.pagination-container button label {
+    cursor: pointer;
+}
+
+.filters__applied {
+    display: flex;
+    width: 60%;
+    gap: 2rem;
+}
+
+.filters__applied-container {
+    display: flex;
+    width: 60%;
+}
+
+.filters__applied-card {
+    padding: .4rem 1rem;
+    background-color: var(--color-light);
+    border-radius: 40px;
+    font-size: 1rem;
+}
+
+#product__button {
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    border: 3px dashed var(--color-primary);
+    border-radius: 10px;
+    width: fit-content;
+    color: var(--color-primary);
+    margin-bottom: 3rem;
+    background-color: var(--color-white);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/LandingPages/mainLandingPage.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"
+    integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/css/helper/message.css">
+  <title>PetParadise</title>
+</head>
+
+<body>
+  <% if (error) { %>
+    <div class="messageUp">
+      <%= message %>
+    </div>
+    <% } %>
+
+      <%- include("../components/navbar", {notlogin}); %>
+
+        <header>
+          <main>
+            <div class="left">
+              <div class="heading">
+                <h1 class="heading__top">
+                  pet<span>Paradise</span><img src="/img/mainLandingPage/dog-sketch.png" alt="" class="dog-sketch" />
+                </h1>
+                <br />
+                <p class="heading__middle">
+                  Your One-Stop-Shop for Pets <br />
+                  and Pet Resources
+                </p>
+                <br />
+                <p class="heading__end">
+                  We provide you <span class="multiText"></span>
+                </p>
+                <script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js"></script>
+                <script>
+                  let typingEffect = new Typed(".multiText", {
+                    strings: [
+                      "Dogs",
+                      "Cats",
+                      "Birds",
+                      "Fish",
+                      "Vet-Care",
+                      "Services",
+                      "Accessories",
+                    ],
+                    loop: true,
+                    typeSpeed: 100,
+                    backSpeed: 80,
+                    backDelay: 1500,
+                  });
+                </script>
+              </div>
+
+              <div class="button">
+                <a href="/services"><button class="btn-grad" type="submit">Services</button></a>
+                <a href="#contact-us"><button class="normal-btn">Contact Us</button></a>
+              </div>
+
+              <!-- <div class="review__section">
+                <h3>Our happy pet owners</h3>
+                <h4><span>&starf;</span> 4.7 (1.5k Reviews)</h4>
+                <div class="review__images">
+                  <img src="/img/mainLandingPage/review1.jpg" alt="" class="img__item" />
+                  <img src="/img/mainLandingPage/review3.jpg" alt="" class="img__item goleft" />
+                  <img src="/img/mainLandingPage/review2.jpg" alt="" class="img__item goleft" />
+                  <img src="/img/mainLandingPage/review4.jpg" alt="" class="img__item goleft" />
+                  <div class="text__item goleft">+3k</div>
+                </div>
+              </div> -->
+            </div>
+
+            <div class="right">
+              <div class="images">
+                <img src="/img/mainLandingPage/group_pet.jpg" alt="" class="group__img" />
+              </div>
+            </div>
+          </main>
+        </header>
+
+        <section class="categories__main">
+          <p class="categories--heading small">Explore Categories</p>
+          <section class="categories__section">
+            <div class="container">
+              <a href="/dogs">
+                <button class="learn-more">
+                  <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                  </span>
+                  <span class="button-text">Dogs</span>
+                </button>
+              </a>
+            </div>
+
+            <div class="container">
+              <a href="/cats">
+                <button class="learn-more">
+                  <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                  </span>
+                  <span class="button-text">Cats</span>
+                </button>
+              </a>
+            </div>
+
+            <div class="container">
+              <a href="/birds">
+                <button class="learn-more">
+                  <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                  </span>
+                  <span class="button-text">Birds</span>
+                </button>
+              </a>
+            </div>
+
+            <div class="container">
+              <a href="/fish">
+                <button class="learn-more">
+                  <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                  </span>
+                  <span class="button-text">Fish</span>
+                </button>
+              </a>
+            </div>
+
+            <div class="container services-cat">
+              <a href="/services">
+                <button class="learn-more">
+                  <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                  </span>
+                  <span class="button-text">Our Services</span>
+                </button>
+              </a>
+            </div>
+
+            <div class="container">
+              <a href="/products">
+                <button class="learn-more">
+                  <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                  </span>
+                  <span class="button-text">Our products</span>
+                </button>
+              </a>
+            </div>
+
+            <div class="container">
+              <a href="#why-choose-us">
+                <button class="learn-more">
+                  <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                  </span>
+                  <span class="button-text">Why choose us</span>
+                </button>
+              </a>
+            </div>
+
+            <div class="container">
+              <a href="#contact-us">
+                <button class="learn-more">
+                  <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                  </span>
+                  <span class="button-text">Contact us</span>
+                </button>
+              </a>
+            </div>
+          </section>
+        </section>
+
+        <section class="our__services">
+          <p class="services--heading small">Our services</p>
+          <div class="services">
+            <div class="services__info">
+              <h3>Pet Gromming</h3>
+              <h2 class="services__heading">
+                Pamper your furry friend with our top-notch pet grooming services.
+              </h2>
+              <p class="services__details">
+                Regular pet grooming not only keeps your furry friend looking and
+                smelling great, but it also offers numerous health benefits.
+                Grooming can help prevent matting, skin irritations, and infections.
+                Additionally, grooming sessions provide an opportunity for you to
+                bond with your pet and detect any potential health issues early on.
+                Give your pet the gift of good health and hygiene with our
+                professional pet grooming services
+              </p>
+              <a href="/services"><button class="services__button" type="submit">
+                  Learn more<span>&rarr;</span>
+                </button></a>
+            </div>
+            <div class="services__add">
+              <img src="/img/mainLandingPage/petGromming.gif" alt="" class="services__image" />
+            </div>
+          </div>
+
+          <div class="services">
+            <div class="services__add">
+              <img src="/img/mainLandingPage/man-training-dog.gif" alt="" class="services__image" />
+            </div>
+            <div class="services__info">
+              <h3 class="services__h3">Pet Training</h3>
+              <h2 class="services__heading">
+                Unlock your pet's full potential with our expert pet training
+                services.
+              </h2>
+              <p class="services__details">
+                Pet training is an essential aspect of responsible pet ownership.
+                Not only does it help prevent unwanted behaviors, but it also
+                creates a stronger bond between you and your furry friend. With
+                proper training, your pet can learn obedience, socialization, and
+                basic commands, which can help keep them safe and happy in various
+                situations.Whether you have a new puppy or an older dog, our
+                professional pet trainers can help you achieve your training goals
+                and create a harmonious relationship with your pet.
+              </p>
+              <a href="/services"><button class="services__button" type="submit">
+                  Learn more&rarr;
+                </button></a>
+            </div>
+          </div>
+
+          <div class="services">
+            <div class="services__info">
+              <h3>Pet Sitting</h3>
+              <h2 class="services__heading">
+                Travel with peace of mind knowing your beloved pet is in the loving
+                care of our experienced pet sitters, who treat them like family.
+              </h2>
+              <p class="services__details">
+                Regular pet grooming not only keeps your furry friend looking and
+                smelling great, but it also offers numerous health benefits.
+                Grooming can help prevent matting, skin irritations, and infections.
+                Additionally, grooming sessions provide an opportunity for you to
+                bond with your pet and detect any potential health issues early on.
+                Give your pet the gift of good health and hygiene with our
+                professional pet grooming services
+              </p>
+              <a href="/services"><button class="services__button" type="submit">
+                  Learn more<span>&rarr;</span>
+                </button></a>
+            </div>
+            <div class="services__add">
+              <img src="/img/mainLandingPage/petsitting.gif" alt="" class="services__image big" />
+            </div>
+          </div>
+
+          <div class="services">
+            <div class="services__add">
+              <img src="/img/mainLandingPage/vet-care.gif" alt="" class="services__image large" />
+            </div>
+            <div class="services__info">
+              <h3 class="servicex__h3">Vet-Care</h3>
+              <h2 class="services__heading">
+                Compassionate care and expert medical attention for your furry
+                family members, because they deserve nothing but the best.
+              </h2>
+              <p class="services__details">
+                Our veterinary care services offer comprehensive medical care for
+                your furry friends. From routine check-ups to advanced diagnostics
+                and treatments, our expert veterinarians and staff are dedicated to
+                providing the highest level of care for your pets. We understand
+                that pets are family, and we treat them with the same care and
+                compassion we would want for our own. Whether your pet needs a
+                vaccination, surgery, or ongoing medical management, we are here to
+                support you and your pet every step of the way. Trust us to provide
+                the best possible care for your furry friend.
+              </p>
+              <a href="/vet-care"><button class="services__button" type="submit">
+                  Learn more&rarr;
+                </button></a>
+            </div>
+          </div>
+
+          <p class="services--heading product--heading small">Our Products</p>
+          <div class="services">
+            <div class="services__info little-pad-top">
+              <h3 class="product-heading">Pet Food</h3>
+              <h2 class="services__heading">
+                Nourish Your Furry Friend with High-Quality Pet Food
+              </h2>
+              <p class="services__details">
+                Introducing our new line of premium pet food - the perfect choice
+                for pets of all kinds! Made with high-quality ingredients and
+                formulated by experts in pet nutrition, our pet food provides the
+                essential nutrients that your furry, feathered, or finned friends
+                need to thrive. Whether you have a dog, cat, bird, or fish, our pet
+                food is designed to meet their unique nutritional requirements. With
+                real meat, vegetables, and other natural ingredients, our pet food
+                is both delicious and nutritious, ensuring that your pet stays
+                healthy and happy. Plus, our convenient home delivery service means
+                that you never have to worry about running out of food. Try our new
+                line of pet food today and give your pets the gift of good health!
+              </p>
+              <a href="/petsfoods"><button class="services__button product-button" type="submit">
+                  Learn more<span>&rarr;</span>
+                </button></a>
+            </div>
+            <div class="services__add">
+              <img src="/img/mainLandingPage/pet-food.gif" alt="" class="services__image big" />
+            </div>
+          </div>
+          <div class="services">
+            <div class="services__add">
+              <img src="/img/mainLandingPage/pet-toys.gif" alt="" class="services__image" />
+            </div>
+            <div class="services__info little-pad-top">
+              <h3 class="product-heading">Pets Toys</h3>
+              <h2 class="services__heading">
+                Playtime made fun: A guide to the best pet toys for your furry
+                friend.
+              </h2>
+              <p class="services__details">
+                Bring joy to your pet's life with our exciting line of pet toys!
+                Designed to stimulate your pet's natural instincts, our toys provide
+                endless entertainment and mental stimulation. Made with high-quality
+                materials and available in a variety of fun shapes and sizes, our
+                pet toys are the perfect way to keep your furry friend happy and
+                healthy. Order now and discover the joy of playtime with your pet!
+              </p>
+              <a href="/products"><button class="services__button product-button" type="submit">
+                  Learn more<span>&rarr;</span>
+                </button></a>
+            </div>
+          </div>
+          <div class="services">
+            <div class="services__info">
+              <h3 class="product-heading">Cages and Aquariums</h3>
+              <h2 class="services__heading">
+                Create a cozy home: Shop our range of cages and aquariums for your
+                pets.
+              </h2>
+              <p class="services__details">
+                Transform your home into a serene oasis for your feathered and
+                finned friends with our range of bird cages and fish aquariums! Our
+                bird cages provide a safe and spacious environment for your birds to
+                thrive, while our fish aquariums are designed to mimic the natural
+                habitats of your fish. Made with high-quality materials and
+                available in a variety of sizes and styles, our cages and aquariums
+                are the perfect choice for pet owners who want to provide their pets
+                with a comfortable and stimulating living space. Order now and
+                create an oasis of tranquility for your pets!
+              </p>
+              <a href="/products"><button class="services__button product-button" type="submit">
+                  Learn more<span>&rarr;</span>
+                </button></a>
+            </div>
+            <div class="services__add">
+              <img src="/img/mainLandingPage/birds.gif" alt="" class="services__image big" />
+            </div>
+          </div>
+        </section>
+
+        <section class="choose-us" id="why-choose-us">
+          <p class="choose-us-heading1 small">Why Choose Us</p>
+          <div class="choose-us-grid">
+            <div class="choose-us-cards">
+              <img src="/img/mainLandingPage/feature-bird.png" alt="" />
+              <p class="card-heading">Wide variety of pets</p>
+              <p class="card-details">
+                We offer a range of pets to choose from, including dogs, cats,
+                birds, fish.We ensure that all our pets are healthy, well-cared for,
+                and ethically sourced from reputable breeders.
+              </p>
+            </div>
+
+            <div class="choose-us-cards">
+              <ion-icon name="people-outline"></ion-icon>
+              <p class="card-heading">Expertise and Experience</p>
+              <p class="card-details">
+                Our team of pet care professionals has years of experience in
+                handling different types of pets, and we are passionate about
+                providing them with the best possible care. Our staff includes
+                certified pet groomers, trained pet sitters, and veterinary
+                assistants.
+              </p>
+            </div>
+
+            <div class="choose-us-cards">
+              <img src="/img/mainLandingPage/feature-service.png" alt="" />
+              <p class="card-heading">Variety of Services</p>
+              <p class="card-details">
+                We offer a range of services, including pet grooming, pet sitting,
+                dog walking, and pet training. Whether you need someone to take care
+                of your pet while you're away or want to improve your pet's
+                behavior, we have you covered.
+              </p>
+            </div>
+
+            <div class="choose-us-cards">
+              <img src="/img/mainLandingPage/feature-care.png" alt="" />
+              <p class="card-heading">Personalized Care</p>
+              <p class="card-details">
+                We understand that each pet is unique, and we take the time to get
+                to know your pet's individual needs and preferences. We customize
+                our services to meet your pet's specific requirements, so you can
+                rest assured that your furry friend is in good hands.
+              </p>
+            </div>
+
+            <div class="choose-us-cards">
+              <ion-icon name="cash-outline"></ion-icon>
+              <p class="card-heading">Affordable Pricing</p>
+              <p class="card-details">
+                We believe that quality pet care should be accessible to everyone,
+                which is why we offer competitive pricing for our services. We also
+                offer discounts for multiple pets and long-term pet care packages.
+              </p>
+            </div>
+            <div class="choose-us-cards">
+              <img src="/img/mainLandingPage/customer-service.png" alt="" />
+              <p class="card-heading">Exceptional Customer Service</p>
+              <p class="card-details">
+                At PetParadise, we pride ourselves on providing exceptional customer
+                service. We are always available to answer any questions you may
+                have, and we go above and beyond to ensure that you and your pet are
+                happy with our services.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="contact" id="contact-us">
+          <p class="services--heading contact-head small">Contact Us</p>
+
+          <div class="contact-container">
+            <div class="content">
+              <div class="left-side">
+                <div class="address details">
+                  <i class="fas fa-map-marker-alt contact-icon"></i>
+                  <div class="topic">Address</div>
+                  <div class="text-one">Sricity, Chittoor</div>
+                  <div class="text-two">Andhra Pradesh</div>
+                </div>
+                <div class="phone details">
+                  <i class="fas fa-phone-alt contact-icon"></i>
+                  <div class="topic">Phone</div>
+                  <div class="text-one">+9112 3456 7890</div>
+                  <div class="text-two">+9191 3434 5678</div>
+                </div>
+                <div class="email details">
+                  <i class="fas fa-envelope contact-icon"></i>
+                  <div class="topic">Email</div>
+                  <div class="text-one">petparadise30@gmail.com</div>
+                  <div class="text-two">info.petParadise@gmail.com</div>
+                </div>
+              </div>
+
+              <div class="right-side">
+                <div class="topic-text">Send us a message</div>
+                <p>Out team would be very happy to hear from you.</p>
+                <form action="/others/contact" method="post">
+                  <div class="input-box">
+                    <input type="text" placeholder="Enter your name" name="name"/>
+                  </div>
+                  <div class="input-box">
+                    <input type="text" placeholder="Enter your email" name="email"/>
+                  </div>
+                  <div class="input-box message-box">
+                    <textarea placeholder="Enter your message" name="message"></textarea>
+                  </div>
+                  <div class="button">
+                    <button class="services__button" type="submit">
+                      Send<span>&rarr;</span>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <button onclick="topFunction()" id="myBtn" title="Go to top"><span style='font-size:30px;'>&#8607;</span></button>
+      <%- include("../components/footer"); %>
+        
+
+        <script src="/JavaScript/LandingPages/mainLandingPage.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+        <script src=""></script>
+</body>
+
+</html>
