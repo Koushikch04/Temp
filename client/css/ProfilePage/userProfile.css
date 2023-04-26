@@ -69,7 +69,7 @@ body {
     top: 40%;
     left: 40%;
     padding: 25px;  
-    /* display: none; */
+
 }
 .updatebox.inactive{
     display: none;
@@ -88,20 +88,23 @@ body {
 
 /* update profile end */
 
-/* order box */
-/* .appointmentbox{
-    background-color: rgb(125, 170, 169);
-    border: 2px solid black;
-    border-radius: 30px;
-    display: grid;
-    grid-template-columns: repeat(2,auto);
-    padding: 10px;
-} */
-
 .appointmentbox{
     background-color: rgb(125, 170, 169); 
     border: 2px solid black;
     border-radius: 30px;
     padding: 10px;
     width: 350px;
+    margin-bottom: 10px;
+}
+
+.remove button{
+    display: block;
+    margin: 2px 0px 20px 168px;
+}
+.remove button:hover{
+    background-color: red;
+    color: white;
+}
+.appointmentbox.inactive{
+    display: none;
 }

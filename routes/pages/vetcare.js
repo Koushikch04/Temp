@@ -36,13 +36,36 @@ router.get("/", async (req, res) => {
 
 router.post("/appointment", async (req, res) => {
     let pack = req.body.selpack;
-    let num = req.body.selnum;
+    let num = req.body.selmun;
     let date = req.body.seldate;
     let time = req.body.seltime;
     let apptype = "doctor";
     let status = "pending"
+
+    let notlogin = true
+    if(req.session.userName){
+        notlogin = false
+    }
+
+    let cartNames = []
+    let cartSrc = []
+    let cartPrices = []
+    let cartType = []
+
+
     await vcApp.create({ userName: req.session.userName, package: pack, number: num, date: date, time: time, appointmentType: apptype, status: status })
-    res.render("./HTML/LandingPages/vetcareLandingPage.ejs")
+    const cartItems = await userSchema.findOne({ mailId: req.session.userMail }, { userCart: 1 })
+    if (!notlogin) {
+        cartItems.userCart.forEach(async element => {
+            console.log(element.productDetails);
+            cartNames.push(element.productDetails.title)
+            cartPrices.push(element.productDetails.price)
+            cartSrc.push(element.productDetails.src)
+        })
+        await userSchema.updateOne({mailId: req.session.userMail},{$push: {appointment: {userName: req.session.userName,package:pack,number:num,date:date,time:time,appointmentType:apptype,status:status}}})
+    }
+    
+    res.render("./HTML/LandingPages/vetcareLandingPage.ejs", { notlogin, cartNames, cartPrices, cartSrc })
 })
 
 module.exports = router;

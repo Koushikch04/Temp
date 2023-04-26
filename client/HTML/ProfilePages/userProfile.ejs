@@ -21,8 +21,6 @@
         <div class="main">
             <div class="topbar">
                 <a href="/auth/user/logout">Logout</a>
-                <!-- <a href="">Support</a>
-                <a href="">Work</a> -->
                 <a href="/">Home</a>
 
             </div>
@@ -35,10 +33,6 @@
                             <div class="mt-3">
                                 <h3 class="userName"><%= userName %></h3>
                                 <button class="updatebutton">Update Profile</button>
-                                <!-- <a href="">Work</a>
-                                <a href="">Support</a>
-                                <a href="">Setting</a>
-                                <a href="">Signout</a> -->
                             </div>
                         </div>
                     </div>
@@ -70,16 +64,29 @@
                     </div>
                     <div class="card mb-3 content">
                         <h1 class="m-3">History</h1>
-                        <div class="card-body">
+                        <div class="card-body app">
                             <div class="row">
-                                <div class="col ">
+                                <div class="col">
                                     <h5>Recent Appointment </h5>
                                     <% if(app.appointment.length > 0) { %>
                                         <% for(let i = 0; i < app.appointment.length; i++) { %>
                                             <div class="appointmentbox">
                                                 <h3>Your appointment</h3>
+                                                <!-- <div class="remove">
+                                                    <button id="cancel" >Cancel appointment</button>
+                                                </div> -->
+                                                
                                                 <p>Appointment type : <%= app.appointment[i].appointmentType %></p>
-                                                <p>Price :  <%= app.appointment[i].package %></p>
+                                                <% if(app.appointment[i].appointmentType === "salon"){ %>
+                                                <p>Total cost :  <%= Number(app.appointment[i].package)*app.appointment[i].number %></p>
+                                                <p>Date : <%= app.appointment[i].date %></p>
+                                                <p>Time : <%= app.appointment[i].time %></p
+                                                <% }else{ %>
+                                                <p>Total cost :  1000 </p> 
+                                                <p>Doctor name : <%= app.appointment[i].package %></p>
+                                                <p>Date : <%= app.appointment[i].date %></p>
+                                                <p>Time : <%= app.appointment[i].time %></p>
+                                                <% } %>
                                                 <p>status :  <%= app.appointment[i].status %></p>
                                             </div>
                                         <% } %>
