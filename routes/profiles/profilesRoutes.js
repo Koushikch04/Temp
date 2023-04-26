@@ -16,6 +16,7 @@ router.use('/admin/Messages', adminMessages);
 router.use('/admin/products', adminProducts);
 router.get('/employee/profile', employeeControllers.employeeDashboard)
 router.get('/employee/status', employeeControllers.changeStatus)
+router.get('/employee/orders', employeeControllers.changeStatusOrder)
 
 module.exports = router;
 

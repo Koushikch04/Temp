@@ -75,6 +75,28 @@
                                         <% } %>
                                     <!-- </div> -->
                                 </div>
+
+                                
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <h2>Orders </h2>
+                                    <!-- <div class="appointmentbox"> -->
+
+                                        <% if( orders.length > 0) { %>
+                                            <% for(let i = 0; i <  orders.length; i++) { %>
+                                                <form action="/profile/employee/orders" method="get" class="appointmentbox employee">
+                                                    <h3><%= orders[i].userId.name.firstName %> ordered a <%= orders[i].prodId.productDetails.Name %> </h3>
+                                                    <div class="buttons">
+                                                        <button value="Delivered" name="status">Delivered</button>
+                                                        <button value="Canceled" name="status">Canceled</button>
+                                                        <input type="hidden" name="appId" value="<%= orders[i]._id %>">
+                                                    </div>
+                                                </form>
+                                            <% } %>
+                                        <% } %>
+                                    <!-- </div> -->
+                                </div>
                             </div>
                         </div>
                     </div>

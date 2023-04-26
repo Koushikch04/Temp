@@ -5,10 +5,11 @@ const Product = require("../models/productSchema")
 
 exports.employeeDashboard = async (req, res) => {
     const appointments = await Appointment.find({ status: "pending"});
-    const orders = await Orders.find({ status: "pending"}).populate('product').populate('userSchema');
+    const orders = await Orders.find({ status: "pending"}).populate("prodId").
+    populate("userId").lean().exec();
     console.log(orders);
 
-    res.render("./HTML/ProfilePages/employee.ejs", { appointments: appointments });
+    res.render("./HTML/ProfilePages/employee.ejs", { appointments: appointments, orders: orders });
 }
 
 exports.changeStatus = async(req, res) => {
@@ -34,5 +35,13 @@ exports.changeStatus = async(req, res) => {
         doc.appointment[inde].status = status
         doc.save()
     })
+    res.redirect('/profile/employee/profile');
+}
+
+exports.changeStatusOrder = async(req, res) => {
+    const appId = req.query.appId;
+    const status = req.query.status;
+
+    await Orders.findOneAndUpdate({_id: appId}, { status: status});
     res.redirect('/profile/employee/profile');
 }

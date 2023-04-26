@@ -139,10 +139,12 @@ body {
     color: white;
 }
 
-.employee .buttons button[value="confirmed"] {
+.employee .buttons button[value="confirmed"],
+.employee .buttons button[value="Delivered"] {
     background-color: #00a36c;
 }
 
-.employee .buttons button[value="canceled"] {
+.employee .buttons button[value="canceled"],
+.employee .buttons button[value="Canceled"] {
     background-color: #FA5F55;
 }
