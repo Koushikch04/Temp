@@ -8,14 +8,13 @@
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="../../css/PaymentPage/paymentPage.css">
-
 </head>
 
 <body>
 
     <div class="container">
 
-        <form action="">
+        <form action="/mainLandingpage" method="post">
 
             <div class="row">
 
@@ -25,29 +24,30 @@
 
                     <div class="inputBox">
                         <span>full name :</span>
-                        <input type="text" placeholder="john deo">
+                        <input type="text" placeholder="john deo" pattern="[A-Za-z ]+" title="Please enter a valid name. Names can only contain letters and spaces." required>
                     </div>
                     <div class="inputBox">
                         <span>email :</span>
-                        <input type="email" placeholder="example@example.com">
+                        <input type="email" placeholder="example@example.com" pattern="/\A[A-Z0-9_!#$%&'*+/=?`{|}~^-]+(?:\.[A-Z0-9_!#$%&'*+/=?`{|}~^-]+↵
+                        )*@[A-Z0-9-]+(?:\.[A-Z0-9-]+)*\Z/" required>
                     </div>
                     <div class="inputBox">
                         <span>address :</span>
-                        <input type="text" placeholder="room - street - locality">
+                        <input type="text" placeholder="room street locality" pattern="/\A(\d+[a-zA-Z]{0,1}\s{0,1}[-]{1}\s{0,1}\d*[a-zA-Z]{0,1}|\d+[a-zA-Z-]{0,1}\d*[a-zA-Z]{0,1})\s*+(.*)/" required>
                     </div>
                     <div class="inputBox">
                         <span>city :</span>
-                        <input type="text" placeholder="mumbai">
+                        <input type="text" placeholder="mumbai" pattern="[A-Za-z ]+" title="Please enter a city. city can only contain letters and spaces." required>
                     </div>
 
                     <div class="flex">
                         <div class="inputBox">
                             <span>state :</span>
-                            <input type="text" placeholder="india">
+                            <input type="text" placeholder="india" pattern="[A-Za-z ]+" title="Please enter a valid country. country can only contain letters and spaces." required>
                         </div>
                         <div class="inputBox">
                             <span>zip code :</span>
-                            <input type="text" placeholder="123 456">
+                            <input type="text" placeholder="12345-6789" pattern="/^(?(^00000(|-0000))|(\d{5}(|-\d{4})))$/" required>
                         </div>
                     </div>
 
@@ -64,25 +64,25 @@
                     </div>
                     <div class="inputBox">
                         <span>name on card :</span>
-                        <input type="text" placeholder="mr. john deo">
+                        <input type="text" placeholder="john deo" pattern="/^((?!-)[A-Za-z0-9-]{1, 63}(?<!-)\\.)+[A-Za-z]{2, 6}$/" required>
                     </div>
                     <div class="inputBox">
                         <span>credit card number :</span>
-                        <input type="number" placeholder="1111-2222-3333-4444">
+                        <input type="number" placeholder="1111222233334444" pattern="/^4[0-9]{12}(?:[0-9]{3})?$/" min="0" max="9999999999999999" required>
                     </div>
                     <div class="inputBox">
                         <span>exp month :</span>
-                        <input type="text" placeholder="january">
+                        <input type="number" placeholder="1" min="1" max="12" required>
                     </div>
 
                     <div class="flex">
                         <div class="inputBox">
                             <span>exp year :</span>
-                            <input type="number" placeholder="2022">
+                            <input type="number" placeholder="2022" min="2023" pattern="/^\d{0,4}$/" required>
                         </div>
                         <div class="inputBox">
                             <span>CVV :</span>
-                            <input type="text" placeholder="1234">
+                            <input type="text" placeholder="1234" required>
                         </div>
                     </div>
 

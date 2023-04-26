@@ -11,7 +11,7 @@ selapp.addEventListener("click",(event)=>{
         event.preventDefault()
     }
     else{
-        let c = window.confirm("Confirm appointment:\nPackage cost : "+ selpack.value+"\nNumber of pets : "+selnum.value+ "\nDate : "+seldate.value+"\nTime : "+seltime.value+"\nTotal cost : "+(selpack.value*selnum.value) );
+        let c = window.confirm("Confirm appointment:\nDoctor : "+ selpack.value+"\nNumber of pets : "+selnum.value+ "\nDate : "+seldate.value+"\nTime : ");
 
         if(!c) {
             event.preventDefault()
