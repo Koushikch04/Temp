@@ -26,6 +26,11 @@ router.post("/", async function (req, res) {
         let notlogin = false
         res.render("./HTML/LandingPages/mainLandingPage", { error: true, message: "Login Successfull!", notlogin, admin })
     }
+    else if (mail === "E101" && password === "Angela@1234") {
+        let notlogin = true
+        admin = true
+        res.render("./HTML/LandingPages/mainLandingPage", { error: true, message: "Login Successfull!", notlogin, admin, employee: true })
+    }
     const users = await User.find({ mailId: mail })
     if (users.length != 0) {
         matched = checkPassword(password, users[0].password)

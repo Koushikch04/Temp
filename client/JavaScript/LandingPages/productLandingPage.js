@@ -62,7 +62,7 @@ let data = {
 
 let card = document.getElementsByClassName('pro-container');
 let xyz = card[0];
-for (let i = 0; i<20; i++) {
+for (let i = 0; i < data.products[0].length; i++) {
     xyz.innerHTML += `<div class="pro ${data.products[0][i].petType}">
                 <img class="imgsrc" src="${data.products[0][i].productDetails.src}" alt="">
                 <div class="des">

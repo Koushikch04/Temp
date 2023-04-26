@@ -34,8 +34,11 @@ form.addEventListener('click', async (event) => {
     let passwordErrorMessages = []
     let validMailFormat = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/;
     let employeeFormat = /^e[0-9]+$/
-    console.log(typeof (userMail.value))
+    console.log()
     if (userMail.value === "admin123" && userPassword.value === "Admin@123") {
+
+    }
+    else if (userMail.value === "E101" && userPassword.value === "Angela@1234") {
 
     }
     else if (!userMail.value.match(employeeFormat) || userMail.value.includes('@')) {
