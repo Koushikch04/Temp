@@ -5,7 +5,8 @@ const Product = require("../models/productSchema")
 
 exports.employeeDashboard = async (req, res) => {
     const appointments = await Appointment.find({ status: "pending"});
-    // const orders = await Orders.find({ status: "pending"}).populate('products').populate('userSchema').lean().exec();
+    const orders = await Orders.find({ status: "pending"}).populate('product').populate('userSchema');
+    console.log(orders);
 
     res.render("./HTML/ProfilePages/employee.ejs", { appointments: appointments });
 }

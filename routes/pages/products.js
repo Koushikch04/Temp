@@ -62,6 +62,15 @@ const productDetails = [
 // productSchema.insertMany(productDetails)
 
 router.post("/product", async (req, res) => {
+    // let notlogin = true;
+    // if (req.session.userName) {
+    //     notlogin = false
+    // }
+
+    // if(notlogin ) {
+    //     res.render("./HTML/Authentication/login.ejs", { error: true, message: "Please login first!"});
+    // }
+    // else{
     console.log("request made");
     console.log(req.body);
     if (req.session.userName) {
@@ -78,7 +87,7 @@ router.post("/product", async (req, res) => {
             await user.updateOne({ $pull: { userCart: { "productDetails.title": title } } });
         }
     }
-    res.send([1, 2, 3])
+    // res.send([1, 2, 3])
 })
 
 module.exports = router;
