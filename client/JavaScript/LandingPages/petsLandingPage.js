@@ -21,6 +21,7 @@ let mobileWidth = window.matchMedia("(max-width: 450px)")
 let Productprice = document.querySelector(".prices-data").innerText.split(",")
 let productName = document.querySelector(".names-data").innerText.split(",")
 let imgSrc = document.querySelector(".src-data").innerText.split(",")
+let SelectedFilters = document.querySelector(".search-bar .search")
 // setTimeout(() => {
 let originalProductprice = [].concat(Productprice)
 let originalproductName = [].concat(productName)
@@ -107,7 +108,6 @@ function expandFilter() {
         filterOptions.classList.add("active")
     }
 }
-let SelectedFilters = document.querySelector(".search-bar .search")
 
 function removeFromSearch(element) {
     filter(element.classList[0])
