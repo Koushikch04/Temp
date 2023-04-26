@@ -106,6 +106,26 @@
                                     <% } %>
                                 </div>
 
+                                </div>
+                                <div class="row">
+                                <div class="col">
+                                    <h2>Orders </h2>
+                                    <% if(orders.length > 0) { %>
+                                        <% for(let i = 0; i < orders.length; i++) { %>
+                                            <div class="appointmentbox">
+                                                <h3>Your Order</h3>
+                                                <!-- <div class="remove">
+                                                    <button id="cancel" >Cancel appointment</button>
+                                                </div> -->
+                                                
+                                                <p>Product Name: <%= orders[i].prodId.productDetails.Name %></p>
+                                                <p>Product Price: <%= orders[i].prodId.productDetails.price %></p>
+                                                
+                                                <p>status :  <%= orders[i].status %></p>
+                                            </div>
+                                        <% } %>
+                                    <% } %>
+                                </div>
                                 
                                 
                             </div>
