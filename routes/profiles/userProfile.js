@@ -1,13 +1,14 @@
 const express = require("express");
 const userSchema = require('../../models/userSchema');
+const announcement = require('../../models/announcement');
 const router = express.Router();
 
 router.get("/", async (req, res) => {
     let userName = req.session.userName
     let userMail = req.session.userMail
-    console.log(userMail);
     let app = await userSchema.findOne({ mailId : userMail })
-    res.render("./HTML/ProfilePages/userProfile.ejs", { userName, userMail, app})
+    let announcements = await announcement.find({},{_id:0,__v:0})
+    res.render("./HTML/ProfilePages/userProfile.ejs", { userName, userMail, app, announcements})
 })
 
 router.post("/", (req, res) => {
