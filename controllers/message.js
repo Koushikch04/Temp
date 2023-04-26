@@ -1,5 +1,6 @@
 const messageModel = require("../models/message");
 const countsSchema = require("../models/counts");
+const Announcement = require("../models/announcement")
 const pageLimitSize = 10;
 
 exports.contactUs = async (req, res) => {
@@ -139,3 +140,14 @@ exports.pageChange = async (req, res) => {
     res.sendStatus(404);
   }
 };
+
+exports.announcementAdd = async (req, res) => {
+  console.log(req.body);
+  const message = req.body.message;
+
+  const announcement = new Announcement({
+    message: message
+  })
+  announcement.save();
+  res.redirect('/profile/admin/dashboard');
+}

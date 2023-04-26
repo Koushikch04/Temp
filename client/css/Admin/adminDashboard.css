@@ -212,3 +212,34 @@ tbody:before {
 .right .sales__box span.success {
     background-color: var(--color-success);
 }
+
+.right .announcement {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.right .announcement h2 {
+    font-size: 2rem;
+    text-align: center;
+    letter-spacing: .5px;
+}
+
+.right .announcement textarea {
+    padding: 1rem;
+    font-size: 1.6rem;
+    font-family: var(--roboto-text);
+    border-radius: 10px;
+}
+
+.right .announcement input {
+    background-color: var(--color-primary);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    color: white;
+    margin-top: 3rem;
+    font-family: var(--roboto-text);
+    font-size: 1.6rem;
+}
