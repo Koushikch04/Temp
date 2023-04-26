@@ -17,74 +17,10 @@
     width: 100px;
 }
 
-body {
+/* body {
     overflow-x: hidden;
-}
+} */
 
-#header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 80px;
-    background: #E3e6f3;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.06);
-    width: 100%;
-    z-index: 999;
-    position: sticky;
-    top: 0;
-    left: 0;
-    height: 30px;
-}
-#header .heading{
-    /* padding-left: 20px; */
-    margin-left: -750px;
-    size: 30px;
-}
-
-#navbar{ 
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     /* right: 200px; */
-} 
-
-#navbar li,
-#mobile i{
-    list-style: none;
-    padding: 0 20px;
-    position: relative;
-    right: 100px;
-}
-
-
-
-#navbar li a{
-    text-decoration:none;
-    font-size:16px;
-    font-weight: 600;
-    color: #1a1a1a;
-    transition: .3s ease;
-}
-
-#navbar li a:hover,
-#navbar li a.active{
-    color: #088178;
-}
-
-#navbar li a.active::after,
-#navbar li a:hover::after{
-    content: "";
-    width: 30%;
-    height: 2px;
-    background:  #088178;
-    position: absolute;
-    bottom: -4px;
-    left: 20px;
-}
-#mobile{
-    display: none;
-    align-items: center;
-}
 #hero{
     background-image: url("../../img/productLandingPage/bg1.jpg");
    height: 90vh;
@@ -99,11 +35,11 @@ body {
 }
 
 #hero h4{
-    margin-bottom: -30px;
+    /* margin-bottom: -30px; */
     font-size: 50px;
 }
 #hero h1{
-  margin-top: -30px;
+  /* margin-top: -30px; */
   color: #088178;
   font-size: 50px;
  

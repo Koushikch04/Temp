@@ -2,7 +2,6 @@ const express = require("express");
 const users = require("../../models/userSchema")
 const productSchema = require("../../models/productSchema");
 const reviewSchema = require("../../models/review");
-// const { nextTick } = require("process");
 
 const router = express.Router();
 

@@ -80,6 +80,7 @@
               </tr>
             </thead>
             <tbody>
+              <% if (order.length > 0 ) { %>
               <% for(let i = 0; i < order.length; i++) {%> <% let date = new
               Date(order[i].createdAt); %> <% let dateString = new
               Date(date.getTime() - (date.getTimezoneOffset() * 60000
@@ -90,6 +91,7 @@
                 <td><%= order[i].userId.name.firstName %></td>
                 <td><%= order[i].status %></td>
               </tr>
+              <% } %>
               <% } %>
             </tbody>
           </table>

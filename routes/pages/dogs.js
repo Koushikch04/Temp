@@ -21,7 +21,7 @@ const petDetails = [
     { productType: "pet", petType: "dogs", productDetails: { Name: "German shepherd 10", price: "30000", src: "../../img/dogLandingPage/Dog_Breeds/german_shepard.png" } },
 ]
 
-// petSchema.insertMany(petDetails)
+
 router.get("/", async (req, res) => {
     let notlogin = true;
     if (req.session.userName) {
@@ -58,8 +58,18 @@ router.get("/", async (req, res) => {
     res.render("./HTML/LandingPages/dogLandingPage.ejs", { notlogin, pricesData, productNamesData, imgsrcData, cartNames, cartPrices, cartSrc })
 })
 
-router.post("/product", async (req, res) => {
+router.post("/product", async (req, res) => { 
+    let notlogin = true;
+    if (req.session.userName) {
+        notlogin = false
+    }
+
+    if(notlogin ) {
+        res.render("./HTML/Authentication/login.ejs", { error: true, message: "Please login first!"});
+    }
     console.log("request made");
+    console.log(req.session.userMail);
+
     console.log(req.body);
     console.log("request session is:" + req.session.userMail);
     if (req.body.type === "add") {

@@ -4,7 +4,6 @@ const announcement = require('../../models/announcement');
 const router = express.Router();
 const orders = require("../../models/orders")
 const productSchemas = require("../../models/productSchema")
-const mongoose = require("mongoose")
 
 router.get("/", async (req, res) => {
     let userName = req.session.userName
