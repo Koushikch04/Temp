@@ -37,11 +37,11 @@
     </nav>
 
     <div class="components-navbar-enter">
-        <% if (notlogin) { %>
+        <% if (notlogin && typeof employee == 'undefined' ) { %>
             <a href="/auth/user/login">
                 <button class="components-navbar-btn-grad" type="submit">Login</button>
             </a>
-            <% }else if (!admin){ %>
+            <% }else if (!admin && !notlogin){ %>
                 <div class="components-navbar-enter__item components-navbar-profile">
                     <!-- <a href="#"><i class="fa-solid fa-cart-shopping" id="cart-btn" style="font-size: 3rem;"></i></a>
                     <a href="/user/profile"><span class="material-icons-sharp components-navbar-profile-picture"
@@ -72,23 +72,24 @@
         <p class="cart-Prices" style="display: none;"> <%= cartPrices.join(","); %></p>
         <p class="cart-src" style="display: none;"> <%= cartSrc.join(","); %></p>
       
-                <% }  else { %>
+                <% }  else if(!notlogin && typeof employee !== 'undefined'  ) { %>
                     <div class="components-navbar-enter__item components-navbar-profile">
                         <!-- <a href="#"><i class="fa-solid fa-cart-shopping" id="cart-btn" style="font-size: 3rem;"></i></a>
                         <a href="/user/profile"><span class="material-icons-sharp components-navbar-profile-picture"
                                 style="font-size: 3rem;">
                                 account_circle
                             </span>
+                            
                         </a> -->
-                        <!-- <div class="fas fa-search" id="search-btn"></div>
-                        <div class="fas fa-shopping-cart" id="cart-btn"></div>
-                        <div class="fas fa-user" id="login-btn"></div> -->
-                        <a href="/profile/admin/dashboard"><i class="fas fa-user" id="login-btn"></i></a>
+                        <a href="/profile/employee/profile"><i class="fas fa-user" id="login-btn"></i></a>
                         <!-- <div class="fas fa-search" id="search-btn"></div>
                         <div class="fas fa-shopping-cart" id="cart-btn"></div>
                         <div class="fas fa-user" id="login-btn"></div> -->
                     </div>                
-                <% } %>  
+                <% } else {%>
+                    <a href="/profile/admin/dashboard"><i class="fas fa-user" id="login-btn"></i></a>
+
+                    <%}%>
     </div>
 </header>
 

@@ -24,10 +24,10 @@ router.post("/", async function (req, res) {
         req.session.admin = true
         admin = req.session.admin
         let notlogin = false
-        res.render("./HTML/LandingPages/mainLandingPage", { error: true, message: "Login Successfull!", notlogin, admin })
+        res.render("./HTML/LandingPages/mainLandingPage", { error: true, message: "Admin Login Successfull!", notlogin, admin })
     }
     else if (mail === "E101" && password === "Angela@1234") {
-        let notlogin = true
+        let notlogin = false
         admin = true
         res.render("./HTML/LandingPages/mainLandingPage", { error: true, message: "Login Successfull!", notlogin, admin, employee: true })
     }
